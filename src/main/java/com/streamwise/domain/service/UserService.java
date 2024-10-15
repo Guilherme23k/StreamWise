@@ -1,4 +1,4 @@
-package com.streamwise.domain.service.impl;
+package com.streamwise.domain.service;
 
 import com.streamwise.domain.model.User;
 

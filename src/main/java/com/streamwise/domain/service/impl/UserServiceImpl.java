@@ -1,8 +1,8 @@
-package com.streamwise.domain.service;
+package com.streamwise.domain.service.impl;
 
 import com.streamwise.domain.model.User;
-import com.streamwise.domain.repository.UserRespository;
-import com.streamwise.domain.service.impl.UserService;
+import com.streamwise.domain.repository.UserRepository;
+import com.streamwise.domain.service.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.NoSuchElementException;
@@ -10,10 +10,10 @@ import java.util.NoSuchElementException;
 @Service
 public class UserServiceImpl implements UserService {
 
-    private final UserRespository userRepository;
+    private final UserRepository userRepository;
 
-    public UserServiceImpl(UserRespository userRespository) {
-        this.userRepository = userRespository;
+    public UserServiceImpl(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     @Override

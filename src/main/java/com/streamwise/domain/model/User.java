@@ -20,6 +20,16 @@ public class User {
     @JoinColumn(name = "user_id")
     private List<Service> services = new ArrayList<>();
 
+    public User(){}
+
+    public User(Long id, String name, String email, String password, List<Service> services) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.services = services;
+    }
+
     public Long getId() {
         return id;
     }
