@@ -1,6 +1,8 @@
 package com.streamwise.domain.model;
 
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity(name = "tb_users")
@@ -10,15 +12,23 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    private Account account;
+    private String name;
+    private String email;
+    private String password;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-    private List<Service> services;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "user_id")
+    private List<Service> services = new ArrayList<>();
 
-    @OneToOne(cascade = CascadeType.ALL)
-    private Financial financial;
+    public User(){}
 
+    public User(Long id, String name, String email, String password, List<Service> services) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.services = services;
+    }
 
     public Long getId() {
         return id;
@@ -28,12 +38,28 @@ public class User {
         this.id = id;
     }
 
-    public Account getAccount() {
-        return account;
+    public String getName() {
+        return name;
     }
 
-    public void setAccount(Account account) {
-        this.account = account;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public List<Service> getServices() {
@@ -42,13 +68,5 @@ public class User {
 
     public void setServices(List<Service> services) {
         this.services = services;
-    }
-
-    public Financial getFinancial() {
-        return financial;
-    }
-
-    public void setFinancial(Financial financial) {
-        this.financial = financial;
     }
 }

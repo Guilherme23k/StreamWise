@@ -2,6 +2,11 @@ package com.streamwise.domain.model;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity(name = "tb_services")
 public class Service {
 
@@ -11,12 +16,8 @@ public class Service {
 
     private String name;
     private String category;
-    private String icon;
-    private float price;
-
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    private BigDecimal price;
+    private LocalDate billingDate;
 
     public Long getId() {
         return id;
@@ -42,27 +43,19 @@ public class Service {
         this.category = category;
     }
 
-    public String getIcon() {
-        return icon;
-    }
-
-    public void setIcon(String icon) {
-        this.icon = icon;
-    }
-
-    public float getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
-    public User getUser() {
-        return user;
+    public LocalDate getBillingDate() {
+        return billingDate;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setBillingDate(LocalDate billingDate) {
+        this.billingDate = billingDate;
     }
 }
