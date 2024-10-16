@@ -1,8 +1,8 @@
-package com.streamwise.domain.service.impl;
+package com.streamwise.service.impl;
 
 import com.streamwise.domain.model.User;
 import com.streamwise.domain.repository.UserRepository;
-import com.streamwise.domain.service.UserService;
+import com.streamwise.service.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.NoSuchElementException;

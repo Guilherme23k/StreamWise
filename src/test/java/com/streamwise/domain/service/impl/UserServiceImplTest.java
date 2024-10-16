@@ -2,6 +2,7 @@ package com.streamwise.domain.service.impl;
 
 import com.streamwise.domain.model.User;
 import com.streamwise.domain.repository.UserRepository;
+import com.streamwise.service.impl.UserServiceImpl;
 import org.instancio.Instancio;
 import org.instancio.Select;
 import org.junit.jupiter.api.Assertions;
@@ -68,7 +69,4 @@ class UserServiceImplTest {
         Assertions.assertEquals("gui@gmail.com", registeredUser.getEmail(), "Email registrado incorretamente");
         Assertions.assertEquals("1234", registeredUser.getPassword(), "Senha registrada incorretamente");
     }
-
-
-
 }
