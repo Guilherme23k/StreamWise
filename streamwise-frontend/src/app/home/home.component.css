@@ -1,0 +1,11 @@
+.home-container {
+  background-color: #431e6a;
+  min-height: 100vh;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}

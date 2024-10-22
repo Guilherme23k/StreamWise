@@ -1,0 +1,8 @@
+<div class="home-container">
+    <app-navbar></app-navbar> <!-- Navbar -->
+
+    <div class="card-container">
+        <app-card *ngFor="let service of services" [service]="service"></app-card>
+    </div>
+</div>
+
