@@ -4,11 +4,9 @@ import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
-@Entity(name = "tb_services")
-public class Service {
+@Entity(name = "tb_signatures")
+public class Signature {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -18,16 +18,16 @@ public class User {
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "user_id")
-    private List<Service> services = new ArrayList<>();
+    private List<Signature> signatures = new ArrayList<>();
 
     public User(){}
 
-    public User(Long id, String name, String email, String password, List<Service> services) {
+    public User(Long id, String name, String email, String password, List<Signature> signatures) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
-        this.services = services;
+        this.signatures = signatures;
     }
 
     public Long getId() {
@@ -62,11 +62,11 @@ public class User {
         this.password = password;
     }
 
-    public List<Service> getServices() {
-        return services;
+    public List<Signature> getServices() {
+        return signatures;
     }
 
-    public void setServices(List<Service> services) {
-        this.services = services;
+    public void setServices(List<Signature> signatures) {
+        this.signatures = signatures;
     }
 }
