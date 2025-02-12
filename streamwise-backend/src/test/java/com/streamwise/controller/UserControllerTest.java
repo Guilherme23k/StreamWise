@@ -2,6 +2,7 @@ package com.streamwise.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.streamwise.domain.model.User;
+import com.streamwise.service.SignatureService;
 import com.streamwise.service.UserService;
 import org.instancio.Instancio;
 import org.instancio.Select;
@@ -31,6 +32,9 @@ class UserControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
+
+    @MockBean
+    private SignatureService signatureService;
 
     @Autowired
     private ObjectMapper objectMapper;

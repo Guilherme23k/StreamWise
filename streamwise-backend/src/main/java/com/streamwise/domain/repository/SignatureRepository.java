@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SignatureRepository extends JpaRepository<Signature, Long> {
+
+    boolean existsByUserIdAndNameAndCategory(Long userId, String name, String category);
 }

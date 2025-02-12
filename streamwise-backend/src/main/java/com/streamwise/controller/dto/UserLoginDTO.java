@@ -1,2 +1,4 @@
-package com.streamwise.controller.dto;public class UserLoginDTO {
+package com.streamwise.controller.dto;
+
+public record UserLoginDTO(String password, String email) {
 }

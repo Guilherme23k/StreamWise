@@ -1,10 +1,13 @@
 package com.streamwise.service.impl;
 
+import com.streamwise.controller.dto.SignatureDTO;
 import com.streamwise.domain.model.Signature;
+import com.streamwise.domain.model.User;
 import com.streamwise.domain.repository.SignatureRepository;
 import com.streamwise.service.SignatureService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
@@ -16,6 +19,11 @@ public class SignatureServiceImpl implements SignatureService {
         this.signatureRepository = signatureRepository;
     }
 
+    @Override
+    public List<Signature> findAll(){
+        return signatureRepository.findAll();
+    }
+
 
     @Override
     public Signature findById(Long id) {
@@ -23,12 +31,24 @@ public class SignatureServiceImpl implements SignatureService {
     }
 
     @Override
-    public Signature create(Signature signatureToCreate) {
-        if(signatureToCreate.getId() != null && signatureRepository.existsById(signatureToCreate.getId())){
+    public Signature create(Signature signatureToCreate, User user) {
+
+        System.out.println("Tentando criar assinatura: " + signatureToCreate.getName() + ", " + signatureToCreate.getCategory());
+
+
+        if (signatureRepository.existsByUserIdAndNameAndCategory(user.getId(), signatureToCreate.getName(), signatureToCreate.getCategory())) {
+
+            System.out.println("Assinatura já existente: " + signatureToCreate.getName() + ", " + signatureToCreate.getCategory());
             throw new IllegalArgumentException("Assinatura já existente");
         }
+
+        System.out.println("Post feito na assinatura " + signatureToCreate.getName());
+
+
+        signatureToCreate.setUser(user);
         return signatureRepository.save(signatureToCreate);
     }
+
 
     @Override
     public Signature editService(Long id, Signature signatureDetails) {
@@ -48,5 +68,16 @@ public class SignatureServiceImpl implements SignatureService {
         Signature signature = signatureRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Signature not found"));
         signatureRepository.delete(signature);
+    }
+
+    @Override
+    public SignatureDTO convertToDTO(Signature signature) {
+        return new SignatureDTO(
+                signature.getId(),
+                signature.getName(),
+                signature.getCategory(),
+                signature.getPrice(),
+                signature.getBillingDate()
+        );
     }
 }

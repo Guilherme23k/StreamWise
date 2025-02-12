@@ -17,6 +17,10 @@ public class Signature {
     private BigDecimal price;
     private LocalDate billingDate;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
     public Long getId() {
         return id;
     }
@@ -55,5 +59,13 @@ public class Signature {
 
     public void setBillingDate(LocalDate billingDate) {
         this.billingDate = billingDate;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
