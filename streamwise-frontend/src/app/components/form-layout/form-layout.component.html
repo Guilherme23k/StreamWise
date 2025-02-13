@@ -1,0 +1,21 @@
+<div class="first">
+    <h1>StreamWise</h1>
+    <img src="/streamwise-frontend/public/assets/Logo.svg">
+</div>
+<main>
+    <section>
+        <h2> {{ title }} </h2>
+        <ng-content></ng-content>
+        <div class="btn-wrapper">
+            <button 
+            class="btn-primary"
+            (click)="submit()">
+            {{ primaryBtnText }}
+            </button>
+            <div class="divider">
+                <span>or</span>
+            </div>
+            <button class="btn-secondary" (click)="navigate()">{{ secondaryBtnText }}</button>
+        </div>
+    </section>
+</main>
