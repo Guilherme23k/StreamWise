@@ -1,8 +1,13 @@
 package com.streamwise.controller;
 
+import com.streamwise.controller.dto.UserDTO;
 import com.streamwise.domain.model.User;
 import com.streamwise.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -12,42 +17,47 @@ import java.net.URI;
 @RequestMapping("/users")
 public class UserController {
 
-    private final UserService userService;
-
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
+    @Autowired
+    private UserService userService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<User> findById(@PathVariable Long id){
-
+    public ResponseEntity<UserDTO> findById(@PathVariable Long id, Authentication authentication) {
+        String loggedUsername = authentication.getName();
         User user = userService.findById(id);
-        return ResponseEntity.ok(user);
 
-    }
 
-    @PostMapping
-    public ResponseEntity<User> create(@RequestBody User userToCreate){
+        if (!user.getUsername().equals(loggedUsername)) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        }
 
-        User userCreated = userService.create(userToCreate);
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
-                .path("/{id}")
-                .buildAndExpand(userCreated.getId())
-                .toUri();
-        return ResponseEntity.created(location).body(userCreated);
+        UserDTO userDTO = userService.convertToDTO(user);
+        return ResponseEntity.ok(userDTO);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<User> editUser(@PathVariable Long id, @RequestBody User userDetails){
+    public ResponseEntity<UserDTO> editUser(@PathVariable Long id, @RequestBody User updatedUser, Authentication authentication) {
+        String loggedUsername = authentication.getName();
+        User user = userService.findById(id);
 
-        User updatedUser = userService.editUser(id, userDetails);
-        return ResponseEntity.ok(updatedUser);
+        if (!user.getUsername().equals(loggedUsername)) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        }
+
+        User updated = userService.editUser(id, updatedUser);
+        UserDTO updatedUserDTO = userService.convertToDTO(updated);
+        return ResponseEntity.ok(updatedUserDTO);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteUser(@PathVariable Long id){
+    public ResponseEntity<Void> deleteUser(@PathVariable Long id, Authentication authentication) {
+        String loggedUsername = authentication.getName();
+        User user = userService.findById(id);
+
+        if (!user.getUsername().equals(loggedUsername)) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        }
+
         userService.delete(id);
         return ResponseEntity.noContent().build();
     }
-
 }

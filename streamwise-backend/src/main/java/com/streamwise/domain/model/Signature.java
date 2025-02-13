@@ -4,11 +4,9 @@ import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
-@Entity(name = "tb_services")
-public class Service {
+@Entity(name = "tb_signatures")
+public class Signature {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +16,10 @@ public class Service {
     private String category;
     private BigDecimal price;
     private LocalDate billingDate;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
     public Long getId() {
         return id;
@@ -57,5 +59,13 @@ public class Service {
 
     public void setBillingDate(LocalDate billingDate) {
         this.billingDate = billingDate;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
