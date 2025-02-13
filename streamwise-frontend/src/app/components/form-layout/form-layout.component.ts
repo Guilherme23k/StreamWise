@@ -5,7 +5,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './form-layout.component.html',
-  styleUrl: './form-layout.component.css'
+  styleUrl: './form-layout.component.scss'
 })
 export class FormLayoutComponent {
 

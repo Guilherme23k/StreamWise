@@ -9,7 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
   template: `<router-outlet></router-outlet>`,
   templateUrl: './app.component.html',
   imports: [RouterModule, NavbarComponent],
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
   title = 'streawise-frontend';
