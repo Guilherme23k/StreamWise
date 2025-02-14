@@ -1,0 +1,10 @@
+<div class="mb-3 input-wrapper">
+    <label for="inputField" class="form-label">{{ label }}</label>
+    <div class="input-group">
+        <input type="{{ type }}" class="form-control" id="inputField" placeholder="{{ placeholder }}" [value]="value"
+            (input)="onInput($event)" />
+        <span class="input-group-text">
+            <ng-content></ng-content>
+        </span>
+    </div>
+</div>
