@@ -1,17 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
-import { NavbarComponent } from './navbar/navbar.component';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  template: `<router-outlet></router-outlet>`,
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  imports: [RouterModule, NavbarComponent],
-  styleUrls: ['./app.component.scss']
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'streawise-frontend';
-
-
+  title = 'streamwise-frontend';
 }

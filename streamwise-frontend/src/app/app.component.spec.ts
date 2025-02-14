@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'streawise-frontend' title`, () => {
+  it(`should have the 'streamwise-frontend' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('streawise-frontend');
+    expect(app.title).toEqual('streamwise-frontend');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, streawise-frontend');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, streamwise-frontend');
   });
 });
