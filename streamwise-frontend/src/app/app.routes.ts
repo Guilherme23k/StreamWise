@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { FormLayoutComponent } from './components/form-layout/form-layout.component';
+import { LoginComponent } from './pages/login/login.component';
 
 export const routes: Routes = [
-    {path: '', component: FormLayoutComponent}
+    {path: '', component: LoginComponent}
 ];
