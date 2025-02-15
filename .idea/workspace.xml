@@ -5,43 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/SignatureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/SignatureController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/dto/SignatureDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/dto/SignatureDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/dto/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/dto/UserLoginDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/dto/UserLoginDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/dto/UserRegisterDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/dto/UserRegisterDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/model/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/model/Signature.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/model/Signature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/repository/SignatureRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/repository/SignatureRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/security/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/security/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/security/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/security/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/service/SignatureService.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/service/SignatureService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/service/impl/SignatureServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/service/impl/SignatureServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/test/java/com/streamwise/controller/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/test/java/com/streamwise/controller/UserControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-frontend/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-frontend/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-frontend/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-frontend/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-frontend/src/app/app.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-frontend/src/app/card/card.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-frontend/src/app/card/card.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-frontend/src/app/home/home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-frontend/src/app/home/home.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-frontend/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-frontend/src/app/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-frontend/src/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-frontend/src/app/home/home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-frontend/src/app/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-frontend/src/app/navbar/navbar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-frontend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-frontend/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-frontend/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,6 +233,7 @@
       <workItem from="1738612317107" duration="1544000" />
       <workItem from="1738615044245" duration="3917000" />
       <workItem from="1739318299793" duration="152000" />
+      <workItem from="1739651411413" duration="691000" />
     </task>
     <servers />
   </component>
