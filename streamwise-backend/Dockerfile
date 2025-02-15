@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copia o arquivo JAR da aplicação para o container
-COPY build/libs/*.jar app.jar
+COPY build/libs/StreamWise-0.0.1-SNAPSHOT.jar app.jar
 
 # Expor a porta da aplicação
 EXPOSE 8080
