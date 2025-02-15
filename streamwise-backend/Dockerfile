@@ -32,4 +32,4 @@ FROM openjdk:17-jdk-slim
 COPY --from=build /app/build/libs /app
 
 # Definindo o comando para rodar a aplicação (ajuste conforme necessário)
-CMD ["java", "-jar", "/app/your-application.jar"]
+CMD ["java", "-jar", "/app/StreamWise-0.0.1-SNAPSHOT.jar"]
