@@ -1,28 +1,35 @@
-# Usa uma imagem oficial do OpenJDK como base
+# Usando uma imagem base com JDK 17
 FROM openjdk:17-jdk-slim AS build
 
-# Define o diretório de trabalho para a construção do projeto
+# Definindo o diretório de trabalho
 WORKDIR /app
 
-# Copia os arquivos do projeto para dentro do container
-COPY . .
+# Instalando wget e unzip
+RUN apt-get update && \
+    apt-get install -y wget unzip && \
+    rm -rf /var/lib/apt/lists/*
 
-# Baixa dependências e gera o .jar
-RUN ./gradlew build -x test
+# Copiando o arquivo build.gradle ou gradle-wrapper
+COPY gradle /app/gradle
+COPY build.gradle /app/
+COPY settings.gradle /app/
 
-# Usa uma nova imagem apenas para rodar a aplicação
+# Copiando o código do projeto
+COPY src /app/src
+
+# Baixando e instalando o Gradle
+RUN wget https://services.gradle.org/distributions/gradle-8.10.2-bin.zip && \
+    unzip gradle-8.10.2-bin.zip -d /opt && \
+    ln -s /opt/gradle-8.10.2/bin/gradle /usr/bin/gradle
+
+# Comando para rodar o build
+RUN gradle build -x test
+
+# Usando uma imagem base para o ambiente de execução (JDK 17)
 FROM openjdk:17-jdk-slim
 
-WORKDIR /app
+# Copiando a aplicação compilada para o container final
+COPY --from=build /app/build/libs /app
 
-# Copia o .jar gerado na fase anterior
-COPY --from=build /app/build/libs/StreamWise-0.0.1-SNAPSHOT.jar app.jar
-
-# Expor a porta da aplicação
-EXPOSE 8080
-
-# Definir o perfil ativo como dev por padrão
-ENV SPRING_PROFILES_ACTIVE=dev
-
-# Comando para rodar a aplicação
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Definindo o comando para rodar a aplicação (ajuste conforme necessário)
+CMD ["java", "-jar", "/app/your-application.jar"]

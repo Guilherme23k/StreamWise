@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="feat: Adicionado .dockerignore para evitar que arquivos desnecessários sejam copiado para a imagem">
+    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="fix: Alterando o dockerfile para que ele possa puxar corretamente o .jar">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/streamwise-backend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/streamwise-backend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +238,7 @@
       <workItem from="1738612317107" duration="1544000" />
       <workItem from="1738615044245" duration="3917000" />
       <workItem from="1739318299793" duration="152000" />
-      <workItem from="1739651411413" duration="1294000" />
+      <workItem from="1739651411413" duration="2904000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Adicionando Dockerfile para melhorar odesenvolvimento do projeto">
       <option name="closed" value="true" />
@@ -260,7 +264,23 @@
       <option name="project" value="LOCAL" />
       <updated>1739652387311</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix: Alterando o COPY para que ele possa puxar corretamente o .jar">
+      <option name="closed" value="true" />
+      <created>1739652770039</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1739652770039</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fix: Alterando o dockerfile para que ele possa puxar corretamente o .jar">
+      <option name="closed" value="true" />
+      <created>1739653009825</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1739653009825</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,6 +290,8 @@
     <MESSAGE value="feat: Adicionando Dockerfile para melhorar odesenvolvimento do projeto" />
     <MESSAGE value="feat: Adicionando docker-compose.yml" />
     <MESSAGE value="feat: Adicionado .dockerignore para evitar que arquivos desnecessários sejam copiado para a imagem" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Adicionado .dockerignore para evitar que arquivos desnecessários sejam copiado para a imagem" />
+    <MESSAGE value="fix: Alterando o COPY para que ele possa puxar corretamente o .jar" />
+    <MESSAGE value="fix: Alterando o dockerfile para que ele possa puxar corretamente o .jar" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: Alterando o dockerfile para que ele possa puxar corretamente o .jar" />
   </component>
 </project>
