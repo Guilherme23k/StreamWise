@@ -4,44 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/SignatureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/SignatureController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/dto/SignatureDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/dto/SignatureDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/dto/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/dto/UserLoginDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/dto/UserLoginDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/dto/UserRegisterDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/dto/UserRegisterDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/model/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/model/Signature.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/model/Signature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/repository/SignatureRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/repository/SignatureRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/repository/UserRepository.java" afterDir="false" />
+    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="fix: Alteracao dos arquivos do docker para rodar a imagem do projeto">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/streamwise-backend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/security/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/security/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/security/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/security/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/service/SignatureService.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/service/SignatureService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/service/impl/SignatureServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/service/impl/SignatureServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/test/java/com/streamwise/controller/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/test/java/com/streamwise/controller/UserControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-frontend/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-frontend/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-frontend/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-frontend/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-frontend/src/app/app.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-frontend/src/app/card/card.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-frontend/src/app/card/card.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-frontend/src/app/home/home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-frontend/src/app/home/home.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-frontend/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-frontend/src/app/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-frontend/src/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-frontend/src/app/home/home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-frontend/src/app/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-frontend/src/app/navbar/navbar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-frontend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-frontend/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-frontend/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +66,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
@@ -117,7 +84,7 @@
     &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Perforce&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;4d00d582fb5b582d2c89b7efdc5eec08&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -269,10 +236,71 @@
       <workItem from="1738612317107" duration="1544000" />
       <workItem from="1738615044245" duration="3917000" />
       <workItem from="1739318299793" duration="152000" />
+      <workItem from="1739651411413" duration="3320000" />
+      <workItem from="1739654838094" duration="651000" />
+      <workItem from="1739656271821" duration="1695000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: Adicionando Dockerfile para melhorar odesenvolvimento do projeto">
+      <option name="closed" value="true" />
+      <created>1739652202002</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1739652202002</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: Adicionando docker-compose.yml">
+      <option name="closed" value="true" />
+      <created>1739652314214</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1739652314214</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: Adicionado .dockerignore para evitar que arquivos desnecessários sejam copiado para a imagem">
+      <option name="closed" value="true" />
+      <created>1739652387311</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1739652387311</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fix: Alterando o COPY para que ele possa puxar corretamente o .jar">
+      <option name="closed" value="true" />
+      <created>1739652770039</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1739652770039</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fix: Alterando o dockerfile para que ele possa puxar corretamente o .jar">
+      <option name="closed" value="true" />
+      <created>1739653009825</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1739653009825</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fix: Alteracao dos arquivos do docker para rodar a imagem do projeto">
+      <option name="closed" value="true" />
+      <created>1739654470072</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1739654470072</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: Adicionando Dockerfile para melhorar odesenvolvimento do projeto" />
+    <MESSAGE value="feat: Adicionando docker-compose.yml" />
+    <MESSAGE value="feat: Adicionado .dockerignore para evitar que arquivos desnecessários sejam copiado para a imagem" />
+    <MESSAGE value="fix: Alterando o COPY para que ele possa puxar corretamente o .jar" />
+    <MESSAGE value="fix: Alterando o dockerfile para que ele possa puxar corretamente o .jar" />
+    <MESSAGE value="fix: Alteracao dos arquivos do docker para rodar a imagem do projeto" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: Alteracao dos arquivos do docker para rodar a imagem do projeto" />
   </component>
 </project>
