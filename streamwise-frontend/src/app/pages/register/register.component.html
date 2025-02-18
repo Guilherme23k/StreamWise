@@ -1,1 +1,32 @@
-<p>register works!</p>
+<app-form-layout
+    title="Registre-se agora"
+    primaryBtnText="Registrar-se"
+    secondaryBtnText="Entrar agora"
+    (submit)="submit()"
+    (navigate)="navigate()"
+>
+
+<form [formGroup]="registerForm">
+    <app-input-box
+        formControlName = "name"
+        inputName="name"
+        type="text"
+        label="Seu nome:"
+        placeholder="Guilherme"
+    ></app-input-box>
+    <app-input-box
+        formControlName = "email"
+        inputName="email"
+        type="email"
+        label="Email:"
+        placeholder="guilherme@gmail.com"
+    ></app-input-box>
+    <app-input-box
+        formControlName = "password"
+        inputName="password"
+        type="password"
+        label="Sua senha:"
+    ></app-input-box>
+</form>
+
+</app-form-layout>
