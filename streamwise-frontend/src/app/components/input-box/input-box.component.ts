@@ -22,6 +22,8 @@ export class InputBoxComponent implements ControlValueAccessor{
   @Input() label: string ="";
   @Input() inputName: string = "";
 
+  showPassword: boolean = false;
+
   value: string = ''
   onChange: any = () => {}
   onTouched: any = () => {}
@@ -44,6 +46,10 @@ export class InputBoxComponent implements ControlValueAccessor{
   }
 
   setDisabledState(isDisabled: boolean): void {}
+
+  togglePasswordVisibility(){
+    this.showPassword = !this.showPassword;
+  }
 
 
 }
