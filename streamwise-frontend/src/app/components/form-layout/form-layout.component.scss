@@ -15,10 +15,36 @@ img {
     border-radius: 10px;
 }
 
+.btn-first{
+    background-color: purple;
+    color: white;
+    box-shadow: 0px 8px 12px rgba(148.23004603385925, 64.33935597538948, 255, 0.20000000298023224);
+
+    &:hover{
+        background-color: rgb(164, 0, 164);
+        color: white;
+        box-shadow: 0px 8px 12px rgba(148, 64, 255, 0.4);
+    }
+
+}
+
+.btn-second{
+    border: 1px solid purple;
+    color: purple;
+
+    &:hover {
+        background-color: purple;
+        color: white;
+        border-color: purple;
+        box-shadow: 0px 8px 12px rgba(148, 64, 255, 0.2);
+        }
+}
+
+
 @media (max-width: $mobile) {
     .card{
         width: 60vw;
-        height: 80vh;
+        height: auto;
 
         .fw-bold{
             font-size: 1.25rem;
@@ -28,7 +54,6 @@ img {
 
 @media (min-width: $desktop) {
     .card{
-        width: 24vw;
-        height: 30rem;
+        width: 22vw;
     }
 }

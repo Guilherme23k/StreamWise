@@ -5,18 +5,18 @@
 </div>
 
 <main class="container d-flex flex-column align-items-center justify-content-start">
-    <div class="card p-4 text-center shadow">
-        <div class="card-body">
+    <div class="card p-1 p-md-2 text-center shadows">
+        <div class="card-body d-flex flex-column align-items-center">
             <h2 class="fw-bold">{{ title }}</h2>
             <ng-content></ng-content>
-            <div class="btn-wrapper d-flex flex-column align-items-center gap-3 mt-auto w-100">
-                <button class="btn btn-primary w-100" (click)="submit()">{{ primaryBtnText }}</button>
+            <div class="btn-wrapper d-flex flex-column mt-2 align-items-center gap-3 w-100">
+                <button class="btn btn-first w-100" (click)="submit()">{{ primaryBtnText }}</button>
                 <div class="d-flex align-items-center w-100 position-relative text-muted">
                     <hr class="flex-grow-1">
                     <span class="px-2 bg-white">or</span>
                     <hr class="flex-grow-1">
                 </div>
-                <button class="btn btn-outline-primary w-100" (click)="navigate()">{{ secondaryBtnText }}</button>
+                <button class="btn btn-second w-100" (click)="navigate()">{{ secondaryBtnText }}</button>
             </div>
         </div>
     </div>
