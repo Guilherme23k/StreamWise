@@ -1,0 +1,28 @@
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #343a40;
+    color: #fff;
+    padding: 70px 20px;
+    transition: all 0.3s ease;
+
+    .nav-link {
+        color: #ddd;
+
+        &:hover {
+            color: #4CAF50;
+        }
+    }
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+section{
+    margin-top: 10rem;
+}
