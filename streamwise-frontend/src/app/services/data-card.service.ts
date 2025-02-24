@@ -1,9 +1,17 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataCardService {
 
-  constructor() { }
+  private apiUrl = 'http://localhost:8080/signatures'
+
+  constructor(private http: HttpClient) { }
+
+  getSignatures(): Observable<any>{
+    return this.http.get<any>(this.apiUrl);
+  }
 }
