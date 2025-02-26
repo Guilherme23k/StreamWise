@@ -1,0 +1,48 @@
+
+.navbar-home{
+    background-color: purple;
+    font-family: Roboto;
+    font-weight: 500;
+}
+
+.btn{
+    background-color: purple;
+    border: 2px solid darkmagenta;
+
+    &:hover {
+        background-color: rgb(103, 0, 103);
+        transition: 0.3s
+    }
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #343a40;
+    color: #fff;
+    padding: 70px 20px;
+    transition: all 0.3s ease;
+
+    .nav-link {
+        color: #ddd;
+
+        &:hover {
+            color: #4CAF50;
+        }
+    }
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+section{
+height: 100vh;
+    width: auto;
+    padding-top: 56px;
+
+    background: linear-gradient(to right, #2C0E44, #431E6A, #6A1B9A, #9C27B0);
+}

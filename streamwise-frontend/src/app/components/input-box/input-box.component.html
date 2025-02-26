@@ -1,10 +1,15 @@
-<div class="mb-3 input-wrapper">
+<div class="md-mb-3 mb-0 input-wrapper">
     <label for="inputField" class="form-label">{{ label }}</label>
     <div class="input-group">
-        <input type="{{ type }}" class="form-control" id="inputField" placeholder="{{ placeholder }}" [value]="value"
+        <input
+            [type]="showPassword && type === 'password' ? 'text' : type"
+            class="form-control" 
+            id="inputField" 
+            placeholder="{{ placeholder }}" 
+            [value]="value"
             (input)="onInput($event)" />
-        <span class="input-group-text">
-            <ng-content></ng-content>
+        <span class="input-group-text" (click)="togglePasswordVisibility()" *ngIf="type === 'password'">
+            <i [ngClass]="showPassword ? 'bi bi-eye' : 'bi bi-eye-slash'"></i>
         </span>
     </div>
 </div>

@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, forwardRef, Input, input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 
@@ -6,7 +7,7 @@ type InputTypes = "text" | "email" | "password"
 @Component({
   selector: 'app-input-box',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   providers:[{
     provide: NG_VALUE_ACCESSOR,
       useExisting:forwardRef(() => InputBoxComponent),
@@ -21,6 +22,8 @@ export class InputBoxComponent implements ControlValueAccessor{
   @Input() placeholder: string = "";
   @Input() label: string ="";
   @Input() inputName: string = "";
+
+  showPassword: boolean = false;
 
   value: string = ''
   onChange: any = () => {}
@@ -45,6 +48,10 @@ export class InputBoxComponent implements ControlValueAccessor{
 
   setDisabledState(isDisabled: boolean): void {}
 
-
+  togglePasswordVisibility(){
+    if(this.type === 'password'){
+    this.showPassword = !this.showPassword;
+    }
+  }
 }
 

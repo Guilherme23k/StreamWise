@@ -1,0 +1,17 @@
+<div *ngIf="loading">Carregando...</div>
+
+<div *ngIf="!loading && !error">
+    <div *ngIf="signatures.length > 0; else emptyMessage">
+        <ul>
+            <li *ngFor="let signature of signatures">
+                {{ signature.name }}
+            </li>
+        </ul>
+    </div>
+
+    <ng-template #emptyMessage>
+        <p>Você não possui nenhuma assinatura.</p>
+    </ng-template>
+</div>
+
+<div *ngIf="error">Ocorreu um erro ao buscar as assinaturas.</div>
