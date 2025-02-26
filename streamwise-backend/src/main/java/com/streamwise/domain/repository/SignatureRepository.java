@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface SignatureRepository extends JpaRepository<Signature, Long> {
 
-    @Query("SELECT s FROM Signature s WHERE s.user.id = :userId")
+    @Query("SELECT s FROM tb_signatures s WHERE s.user.id = :userId")
     List<Signature> findByUserId(@Param("userId") Long userId);
 
     boolean existsByUserIdAndNameAndCategory(Long userId, String name, String category);
