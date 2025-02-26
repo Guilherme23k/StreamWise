@@ -3,6 +3,7 @@ package com.streamwise.controller;
 import com.streamwise.controller.dto.SignatureDTO;
 import com.streamwise.domain.model.Signature;
 import com.streamwise.domain.model.User;
+import com.streamwise.domain.repository.UserRepository;
 import com.streamwise.security.JwtUtil;
 import com.streamwise.service.SignatureService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -24,10 +25,14 @@ public class SignatureController {
 
     private final JwtUtil jwtUtil;
 
+    private final UserRepository userRepository;
 
-    public SignatureController(SignatureService signatureService, JwtUtil jwtUtil) {
+
+    public SignatureController(SignatureService signatureService, JwtUtil jwtUtil, UserRepository userRepository) {
         this.signatureService = signatureService;
         this.jwtUtil = jwtUtil;
+        this.userRepository = userRepository;
+
     }
 
     @GetMapping("/{id}")
@@ -50,12 +55,15 @@ public class SignatureController {
         return ResponseEntity.ok(signatureDTOS);
     }
 
-    @GetMapping()
+    @GetMapping("/user")
     public ResponseEntity<List<SignatureDTO>> getUserSignatures(HttpServletRequest request){
         String token = request.getHeader("Authorization").replace("Bearer ", "");
-        String userId = jwtUtil.extractUserId(token);
+        String username = jwtUtil.extractUsername(token);
 
-        List<SignatureDTO> signatureDTOS = signatureService.getSignaturesByUser(Long.parseLong(userId));
+        User user = userRepository.findByEmail(username)
+                .orElseThrow(() -> new RuntimeException("Usuario não encontrado"));
+
+        List<SignatureDTO> signatureDTOS = signatureService.getSignaturesByUser(user.getId());
         return ResponseEntity.ok(signatureDTOS);
     }
 

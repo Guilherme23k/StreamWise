@@ -2,12 +2,12 @@ package com.streamwise.service.impl;
 
 import com.streamwise.controller.dto.SignatureDTO;
 import com.streamwise.controller.dto.UserDTO;
-import com.streamwise.controller.dto.UserLoginDTO;
 import com.streamwise.controller.dto.UserRegisterDTO;
 import com.streamwise.domain.model.Signature;
 import com.streamwise.domain.model.User;
 import com.streamwise.domain.repository.UserRepository;
 import com.streamwise.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -24,10 +24,12 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder passwordEncoder;
 
+    @Autowired
     public UserServiceImpl(UserRepository userRepository) {
-        this.userRepository = userRepository;
         this.passwordEncoder = new BCryptPasswordEncoder();
+        this.userRepository = userRepository;
     }
+
 
     public SignatureDTO convertSignatureToDTO(Signature signature){
         return new SignatureDTO(

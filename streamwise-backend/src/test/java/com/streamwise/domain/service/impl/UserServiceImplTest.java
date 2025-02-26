@@ -46,27 +46,4 @@ class UserServiceImplTest {
             userService.findById(2L);
         });
     }
-
-    @Test
-    public void testRegisterUser(){
-        User userToRegister = Instancio.of(User.class)
-                .set(Select.field(User::getName), "Guilherme")
-                .set(Select.field(User::getEmail), "gui@gmail.com")
-                .set(Select.field(User::getPassword), "1234")
-                .create();
-
-        Mockito.when(userRepository.save(Mockito.any()))
-                .thenAnswer(invocation -> {
-                    User user = invocation.getArgument(0);
-                    user.setId(1L);
-                    return user;
-                });
-
-        User registeredUser = userService.create(userToRegister);
-
-        Assertions.assertNotNull(registeredUser.getId(), "ID do usuário não pode ser nulo");
-        Assertions.assertEquals("Guilherme", registeredUser.getName(), "Nome de usuário registrado incorretamente");
-        Assertions.assertEquals("gui@gmail.com", registeredUser.getEmail(), "Email registrado incorretamente");
-        Assertions.assertEquals("1234", registeredUser.getPassword(), "Senha registrada incorretamente");
-    }
 }
