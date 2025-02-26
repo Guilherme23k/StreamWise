@@ -10,6 +10,8 @@ public interface SignatureService {
 
     List<Signature> findAll();
 
+    List<Signature> getSignaturesByUser(Long userId);
+
     Signature findById(Long id);
 
     Signature create(Signature signature, User user);
