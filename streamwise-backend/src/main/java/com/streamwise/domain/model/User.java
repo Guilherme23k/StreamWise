@@ -27,7 +27,6 @@ public class User implements UserDetails {
     private Set<Role> authorities = new HashSet<>();
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    @JoinColumn(name = "user_id")
     private List<Signature> signatures = new ArrayList<>();
 
     public User(){}
