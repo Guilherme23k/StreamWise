@@ -80,4 +80,11 @@ public class SignatureServiceImpl implements SignatureService {
                 signature.getBillingDate()
         );
     }
+
+    @Override
+    public List<Signature> getSignaturesByUser(Long userId) {
+        return signatureRepository.findByUserId(userId);
+    }
 }
+
+
