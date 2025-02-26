@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 
 @Service
 public class SignatureServiceImpl implements SignatureService {
@@ -82,8 +83,12 @@ public class SignatureServiceImpl implements SignatureService {
     }
 
     @Override
-    public List<Signature> getSignaturesByUser(Long userId) {
-        return signatureRepository.findByUserId(userId);
+    public List<SignatureDTO> getSignaturesByUser(Long userId) {
+        List<Signature> signatures = signatureRepository.findByUserId(userId);
+
+        return signatures.stream()
+                .map(this::convertToDTO)
+                .collect(Collectors.toList());
     }
 }
 

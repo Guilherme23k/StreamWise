@@ -10,7 +10,7 @@ public interface SignatureService {
 
     List<Signature> findAll();
 
-    List<Signature> getSignaturesByUser(Long userId);
+    List<SignatureDTO> getSignaturesByUser(Long userId);
 
     Signature findById(Long id);
 
