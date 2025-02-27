@@ -5,6 +5,9 @@ import { CommonModule } from '@angular/common';
 interface Signature {
   id: number;
   name: string;
+  category: string;
+  price: number;
+  billingDate: string;
 }
 
 @Component({
