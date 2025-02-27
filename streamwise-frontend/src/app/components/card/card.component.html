@@ -8,10 +8,15 @@
                     <img class="card-img-top"
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW4zvfRq0Vpjxlzu2Wvx_L7nJNdzy_d9Mx8g&s">
                     <div class="card-body">
-                        <h4 class="card-title">{{signature.name}}</h4>
-                        <p class="card-text">{{signature.category}}</p>
-                        <p class="card-text">{{signature.price}}</p>
-                        <p class="card-text">{{signature.billingDate}}</p>
+                        <h4 class="card-title">{{ signature.name }}</h4>
+            
+                        <span class="badge">{{ signature.category }}</span>
+            
+                        <p class="price">R$ {{ signature.price }}</p>
+            
+                        <p class="billing-date">
+                            <i class="fas fa-calendar-alt"></i> Próxima cobrança: {{ signature.billingDate }}
+                        </p>
                     </div>
                 </div>
             </li>
