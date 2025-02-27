@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class DataCardService {
 
-  private apiUrl = 'http://localhost:8080/signatures'
+  private apiUrl = 'http://localhost:8080/signatures/user/signatures'
 
   constructor(private http: HttpClient) { }
 
