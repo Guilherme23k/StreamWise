@@ -55,7 +55,7 @@ public class SignatureController {
         return ResponseEntity.ok(signatureDTOS);
     }
 
-    @GetMapping("/user")
+    @GetMapping("/user/signatures")
     public ResponseEntity<List<SignatureDTO>> getUserSignatures(HttpServletRequest request){
         String token = request.getHeader("Authorization").replace("Bearer ", "");
         String username = jwtUtil.extractUsername(token);
