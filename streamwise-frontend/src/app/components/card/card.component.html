@@ -1,11 +1,8 @@
 <div *ngIf="loading">Carregando...</div>
 
-
 <div *ngIf="!loading && !error">
-
-    
     <div class="container" *ngIf="signatures.length > 0; else emptyMessage">
-        <ul>
+        <ul [ngClass]="getGridClass()">
             <li *ngFor="let signature of signatures">
                 <div class="card">
                     <img class="card-img-top"
