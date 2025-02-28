@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="fix: Alteracao dos arquivos do docker para rodar o backend corretamente" />
+    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="refactor: Altera endpoint de /user/signatures para /user/me/signatures para melhorar semântica e reduzir redundancia">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -175,6 +177,30 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="UserControllerTest.testeEditUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/streamwise-backend" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.streamwise.controller.UserControllerTest.testeEditUser&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="StreamWiseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="com.streamwise.StreamWise.main" />
@@ -185,6 +211,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.Application DEV" />
+      <item itemvalue="Gradle.UserControllerTest.testeEditUser" />
       <item itemvalue="Gradle.UserControllerTest.testCreateUser" />
       <item itemvalue="Gradle.UserControllerTest" />
       <item itemvalue="Gradle.StreamWise" />
@@ -192,6 +219,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.UserControllerTest.testeEditUser" />
         <item itemvalue="Gradle.UserControllerTest" />
         <item itemvalue="Gradle.UserControllerTest.testCreateUser" />
         <item itemvalue="Gradle.StreamWise" />
@@ -236,6 +264,12 @@
       <workItem from="1739654838094" duration="651000" />
       <workItem from="1739656271821" duration="1695000" />
       <workItem from="1739658673369" duration="527000" />
+      <workItem from="1740528317204" duration="5683000" />
+      <workItem from="1740534024686" duration="4204000" />
+      <workItem from="1740617001912" duration="618000" />
+      <workItem from="1740617666171" duration="570000" />
+      <workItem from="1740618880020" duration="13000" />
+      <workItem from="1740620082112" duration="339000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Adicionando Dockerfile para melhorar odesenvolvimento do projeto">
       <option name="closed" value="true" />
@@ -293,7 +327,103 @@
       <option name="project" value="LOCAL" />
       <updated>1739658886985</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="feat: Adicionado query manual que ira buscar a assinatura pelo ID do usuario">
+      <option name="closed" value="true" />
+      <created>1740528975377</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1740528975377</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fix: Alterado a query de busca para chamar a entidade e nao a classe">
+      <option name="closed" value="true" />
+      <created>1740529049903</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1740529049903</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fix: Removido conflito de ManyToOne e OneToMany entre as classes de usuario e assinaturas">
+      <option name="closed" value="true" />
+      <created>1740529422766</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1740529422766</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat: Adicionado contrato de puxar assinaturas pelo Id do usuario">
+      <option name="closed" value="true" />
+      <created>1740529467593</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1740529467593</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: Adicionado implementacao do contrato para puxar as assinaturas pelo id do usuario">
+      <option name="closed" value="true" />
+      <created>1740529843172</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1740529843172</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat: Adicionado metodo do JWT que ira puxar o id do usuario pelo token">
+      <option name="closed" value="true" />
+      <created>1740530059388</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1740530059388</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat: Adicionado metodo no controller para puxar assinatura pelo usuario">
+      <option name="closed" value="true" />
+      <created>1740530859120</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1740530859120</updated>
+    </task>
+    <task id="LOCAL-00015" summary="fix: Alteracao na logica de negocio na funcionalidade de puxar assinaturas pelo id do usuario">
+      <option name="closed" value="true" />
+      <created>1740530896003</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1740530896003</updated>
+    </task>
+    <task id="LOCAL-00016" summary="fix: Correcao de bugs no backend que impossibilitavam de subir a aplicacao">
+      <option name="closed" value="true" />
+      <created>1740536886086</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1740536886086</updated>
+    </task>
+    <task id="LOCAL-00017" summary="chore: configura ddl-auto como create-drop para facilitar testes">
+      <option name="closed" value="true" />
+      <created>1740617510163</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1740617510163</updated>
+    </task>
+    <task id="LOCAL-00018" summary="refactor: Altera endpoint de /user para /user/signatures para melhorar semântica">
+      <option name="closed" value="true" />
+      <created>1740618141139</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1740618141139</updated>
+    </task>
+    <task id="LOCAL-00019" summary="refactor: Altera endpoint de /user/signatures para /user/me/signatures para melhorar semântica e reduzir redundancia">
+      <option name="closed" value="true" />
+      <created>1740620124047</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1740620124047</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,6 +437,18 @@
     <MESSAGE value="fix: Alterando o dockerfile para que ele possa puxar corretamente o .jar" />
     <MESSAGE value="fix: Alteracao dos arquivos do docker para rodar a imagem do projeto" />
     <MESSAGE value="fix: Alteracao dos arquivos do docker para rodar o backend corretamente" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: Alteracao dos arquivos do docker para rodar o backend corretamente" />
+    <MESSAGE value="feat: Adicionado query manual que ira buscar a assinatura pelo ID do usuario" />
+    <MESSAGE value="fix: Alterado a query de busca para chamar a entidade e nao a classe" />
+    <MESSAGE value="fix: Removido conflito de ManyToOne e OneToMany entre as classes de usuario e assinaturas" />
+    <MESSAGE value="feat: Adicionado contrato de puxar assinaturas pelo Id do usuario" />
+    <MESSAGE value="feat: Adicionado implementacao do contrato para puxar as assinaturas pelo id do usuario" />
+    <MESSAGE value="feat: Adicionado metodo do JWT que ira puxar o id do usuario pelo token" />
+    <MESSAGE value="feat: Adicionado metodo no controller para puxar assinatura pelo usuario" />
+    <MESSAGE value="fix: Alteracao na logica de negocio na funcionalidade de puxar assinaturas pelo id do usuario" />
+    <MESSAGE value="fix: Correcao de bugs no backend que impossibilitavam de subir a aplicacao" />
+    <MESSAGE value="chore: configura ddl-auto como create-drop para facilitar testes" />
+    <MESSAGE value="refactor: Altera endpoint de /user para /user/signatures para melhorar semântica" />
+    <MESSAGE value="refactor: Altera endpoint de /user/signatures para /user/me/signatures para melhorar semântica e reduzir redundancia" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: Altera endpoint de /user/signatures para /user/me/signatures para melhorar semântica e reduzir redundancia" />
   </component>
 </project>
