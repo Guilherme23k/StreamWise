@@ -38,6 +38,10 @@ export class CardComponent implements OnInit{
       })
   }
 
+  getBillingDay(dateStr: String): String{
+    return dateStr.split("-")[1];
+  }
+
   getGridClass(): string{
     const count = this.signatures.length;
     if (count === 1) return "grid-one";
