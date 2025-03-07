@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="refactor: Altera logica que inverte DTO para model">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/SignatureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/SignatureController.java" afterDir="false" />
-    </list>
+    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="update: Altera logica do POST no SignatureController" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -273,7 +270,7 @@
       <workItem from="1740618880020" duration="13000" />
       <workItem from="1740620082112" duration="339000" />
       <workItem from="1741222021811" duration="1242000" />
-      <workItem from="1741386101360" duration="4543000" />
+      <workItem from="1741386101360" duration="4906000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Adicionando Dockerfile para melhorar odesenvolvimento do projeto">
       <option name="closed" value="true" />
@@ -499,14 +496,21 @@
       <option name="project" value="LOCAL" />
       <updated>1741389978527</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="update: Altera logica do POST no SignatureController">
+      <option name="closed" value="true" />
+      <created>1741390798254</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1741390798254</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix: Alterando o COPY para que ele possa puxar corretamente o .jar" />
     <MESSAGE value="fix: Alterando o dockerfile para que ele possa puxar corretamente o .jar" />
     <MESSAGE value="fix: Alteracao dos arquivos do docker para rodar a imagem do projeto" />
     <MESSAGE value="fix: Alteracao dos arquivos do docker para rodar o backend corretamente" />
@@ -531,6 +535,7 @@
     <MESSAGE value="feat: Implementa constructor" />
     <MESSAGE value="feat: Implementa construtor sem argumento na model Signature" />
     <MESSAGE value="refactor: Altera logica que inverte DTO para model" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Altera logica que inverte DTO para model" />
+    <MESSAGE value="update: Altera logica do POST no SignatureController" />
+    <option name="LAST_COMMIT_MESSAGE" value="update: Altera logica do POST no SignatureController" />
   </component>
 </project>
