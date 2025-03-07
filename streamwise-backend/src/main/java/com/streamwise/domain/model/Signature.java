@@ -34,6 +34,9 @@ public class Signature {
         this.imageName = imageName;
     }
 
+    public Signature() {
+    }
+
     public Long getId() {
         return id;
     }
