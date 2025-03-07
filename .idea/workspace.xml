@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="refactor: Altera endpoint de /user/signatures para /user/me/signatures para melhorar semântica e reduzir redundancia">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="feat: Adiciona enum para mandar logo da assinatura de modo dinâmico">
+      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/model/SignatureImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/model/SignatureImage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,7 +271,7 @@
       <workItem from="1740618880020" duration="13000" />
       <workItem from="1740620082112" duration="339000" />
       <workItem from="1741222021811" duration="1242000" />
-      <workItem from="1741386101360" duration="944000" />
+      <workItem from="1741386101360" duration="1249000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Adicionando Dockerfile para melhorar odesenvolvimento do projeto">
       <option name="closed" value="true" />
@@ -425,7 +425,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740620124047</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="feat: Adiciona enum para mandar logo da assinatura de modo dinâmico">
+      <option name="closed" value="true" />
+      <created>1741387347426</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1741387347426</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -451,6 +459,7 @@
     <MESSAGE value="chore: configura ddl-auto como create-drop para facilitar testes" />
     <MESSAGE value="refactor: Altera endpoint de /user para /user/signatures para melhorar semântica" />
     <MESSAGE value="refactor: Altera endpoint de /user/signatures para /user/me/signatures para melhorar semântica e reduzir redundancia" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Altera endpoint de /user/signatures para /user/me/signatures para melhorar semântica e reduzir redundancia" />
+    <MESSAGE value="feat: Adiciona enum para mandar logo da assinatura de modo dinâmico" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Adiciona enum para mandar logo da assinatura de modo dinâmico" />
   </component>
 </project>
