@@ -24,4 +24,14 @@ public record SignatureDTO(Long id,
         );
     }
 
+
+    public Signature toEntity() {
+        return new Signature(
+                id,
+                name,
+                category,
+                price,
+                billingDate,
+                signatureImage != null ? SignatureImage.valueOf(signatureImage) : null        );
+    }
 }
