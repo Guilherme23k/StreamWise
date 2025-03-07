@@ -65,7 +65,7 @@ li {
     border-radius: 10px;
     overflow: hidden;
     text-align: center;
-    background: #c3c3c3;
+    background: #fff;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
 
@@ -84,7 +84,7 @@ li {
     .card-body {
         margin-top: 0.25rem;
         width: 100%;
-        padding: 0 15px 15px;
+        padding: 0 15px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -100,7 +100,7 @@ li {
     }
 
     .badge {
-        color: white;
+        color: #8B8B8E;
         padding: 5px 10px;
         border-radius: 20px;
         font-size: 0.9rem;
@@ -118,7 +118,7 @@ li {
     }
 
     .billing-date {
-        margin: 0;
+        margin: 10px 0 0;
         font-size: 0.9rem;
         color: #666;
 
