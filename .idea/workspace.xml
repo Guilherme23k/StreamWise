@@ -271,6 +271,7 @@
       <workItem from="1740618880020" duration="13000" />
       <workItem from="1740620082112" duration="339000" />
       <workItem from="1741222021811" duration="1242000" />
+      <workItem from="1741386101360" duration="944000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Adicionando Dockerfile para melhorar odesenvolvimento do projeto">
       <option name="closed" value="true" />
@@ -451,16 +452,5 @@
     <MESSAGE value="refactor: Altera endpoint de /user para /user/signatures para melhorar semântica" />
     <MESSAGE value="refactor: Altera endpoint de /user/signatures para /user/me/signatures para melhorar semântica e reduzir redundancia" />
     <option name="LAST_COMMIT_MESSAGE" value="refactor: Altera endpoint de /user/signatures para /user/me/signatures para melhorar semântica e reduzir redundancia" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/SignatureController.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
