@@ -2,6 +2,7 @@ package com.streamwise.controller;
 
 import com.streamwise.controller.dto.SignatureDTO;
 import com.streamwise.domain.model.Signature;
+import com.streamwise.domain.model.SignatureImage;
 import com.streamwise.domain.model.User;
 import com.streamwise.domain.repository.UserRepository;
 import com.streamwise.security.JwtUtil;
@@ -68,21 +69,34 @@ public class SignatureController {
     }
 
     @PostMapping
-    public ResponseEntity<SignatureDTO> create(@RequestBody Signature signatureToCreate){
+    public ResponseEntity<SignatureDTO> create(@RequestBody SignatureDTO signatureDTO){
 
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         User loggedUser = (User) authentication.getPrincipal();
 
+        SignatureImage signatureImage = signatureDTO.signatureImage() != null ? SignatureImage.valueOf(signatureDTO.signatureImage()) : null;
+
+        Signature signatureToCreate = new Signature(
+                null,
+                signatureDTO.name(),
+                signatureDTO.category(),
+                signatureDTO.price(),
+                signatureDTO.billingDate(),
+                loggedUser,
+                signatureImage
+        );
+
         Signature signatureCreated = signatureService.create(signatureToCreate, loggedUser);
+
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}")
                 .buildAndExpand(signatureCreated.getId())
                 .toUri();
 
-        SignatureDTO signatureDTO = signatureService.convertToDTO(signatureCreated);
+        SignatureDTO signatureDTOResponse = signatureService.convertToDTO(signatureCreated);
 
-        return ResponseEntity.created(location).body(signatureDTO);
+        return ResponseEntity.created(location).body(signatureDTOResponse);
     }
 
     @PutMapping("/{id}")

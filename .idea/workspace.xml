@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="feat: Implementa o signatureImage no convertToDto no SignatureServiceImpl">
+    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="refactor: Altera logica que inverte DTO para model">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/dto/SignatureDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/dto/SignatureDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/SignatureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/SignatureController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -273,7 +273,7 @@
       <workItem from="1740618880020" duration="13000" />
       <workItem from="1740620082112" duration="339000" />
       <workItem from="1741222021811" duration="1242000" />
-      <workItem from="1741386101360" duration="3068000" />
+      <workItem from="1741386101360" duration="4543000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Adicionando Dockerfile para melhorar odesenvolvimento do projeto">
       <option name="closed" value="true" />
@@ -467,16 +467,45 @@
       <option name="project" value="LOCAL" />
       <updated>1741388440008</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="feat: Implementa novo metodo para converter DTO em uma entidade Signature">
+      <option name="closed" value="true" />
+      <created>1741389293998</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1741389293998</updated>
+    </task>
+    <task id="LOCAL-00026" summary="feat: Implementa constructor">
+      <option name="closed" value="true" />
+      <created>1741389359353</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1741389359353</updated>
+    </task>
+    <task id="LOCAL-00027" summary="feat: Implementa construtor sem argumento na model Signature">
+      <option name="closed" value="true" />
+      <created>1741389943677</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1741389943677</updated>
+    </task>
+    <task id="LOCAL-00028" summary="refactor: Altera logica que inverte DTO para model">
+      <option name="closed" value="true" />
+      <created>1741389978527</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1741389978527</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: Adicionando Dockerfile para melhorar odesenvolvimento do projeto" />
-    <MESSAGE value="feat: Adicionando docker-compose.yml" />
-    <MESSAGE value="feat: Adicionado .dockerignore para evitar que arquivos desnecessários sejam copiado para a imagem" />
     <MESSAGE value="fix: Alterando o COPY para que ele possa puxar corretamente o .jar" />
     <MESSAGE value="fix: Alterando o dockerfile para que ele possa puxar corretamente o .jar" />
     <MESSAGE value="fix: Alteracao dos arquivos do docker para rodar a imagem do projeto" />
@@ -498,6 +527,10 @@
     <MESSAGE value="feat: Adiciona enum image name a entidade Signature" />
     <MESSAGE value="feat: Implementa o signatureImage no DTO como uma string" />
     <MESSAGE value="feat: Implementa o signatureImage no convertToDto no SignatureServiceImpl" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Implementa o signatureImage no convertToDto no SignatureServiceImpl" />
+    <MESSAGE value="feat: Implementa novo metodo para converter DTO em uma entidade Signature" />
+    <MESSAGE value="feat: Implementa constructor" />
+    <MESSAGE value="feat: Implementa construtor sem argumento na model Signature" />
+    <MESSAGE value="refactor: Altera logica que inverte DTO para model" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: Altera logica que inverte DTO para model" />
   </component>
 </project>
