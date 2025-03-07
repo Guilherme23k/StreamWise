@@ -24,6 +24,15 @@ public class Signature {
     @Enumerated(EnumType.STRING)
     private SignatureImage imageName;
 
+    public Signature(Long id, String name, String category, BigDecimal price, LocalDate billingDate, User user, SignatureImage imageName) {
+        this.id = id;
+        this.name = name;
+        this.category = category;
+        this.price = price;
+        this.billingDate = billingDate;
+        this.user = user;
+        this.imageName = imageName;
+    }
 
     public Long getId() {
         return id;
