@@ -26,12 +26,17 @@ public record SignatureDTO(Long id,
 
 
     public Signature toEntity() {
-        return new Signature(
-                id,
-                name,
-                category,
-                price,
-                billingDate,
-                signatureImage != null ? SignatureImage.valueOf(signatureImage) : null        );
+        Signature signature = new Signature();
+        signature.setId(id);
+        signature.setName(name);
+        signature.setCategory(category);
+        signature.setPrice(price);
+        signature.setBillingDate(billingDate);
+
+        if (signatureImage != null) {
+            signature.setImageName(SignatureImage.valueOf(signatureImage));
+        }
+
+        return signature;
     }
 }
