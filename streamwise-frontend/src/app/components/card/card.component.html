@@ -5,8 +5,7 @@
         <ul [ngClass]="getGridClass()">
             <li *ngFor="let signature of signatures">
                 <div class="card">
-                    <img class="card-img-top"
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW4zvfRq0Vpjxlzu2Wvx_L7nJNdzy_d9Mx8g&s">
+                    <img class="card-img-top" [src]="signature.imageUrl" alt="Imagem da categoria">
                     <div class="card-body">
                         <span class="badge">{{ signature.category }}</span>
 
