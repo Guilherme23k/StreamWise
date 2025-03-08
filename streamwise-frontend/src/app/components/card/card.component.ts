@@ -8,6 +8,7 @@ interface Signature {
   category: string;
   price: number;
   billingDate: string;
+  imageUrl: string; 
 }
 
 @Component({
