@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="fix: Conserta o metodo que converte Assinatura para DTO no UserServiceImpl">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="fix: Conserta o metodo que converte Assinatura para DTO no UserServiceImpl" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -272,7 +270,7 @@
       <workItem from="1740618880020" duration="13000" />
       <workItem from="1740620082112" duration="339000" />
       <workItem from="1741222021811" duration="1242000" />
-      <workItem from="1741386101360" duration="5948000" />
+      <workItem from="1741386101360" duration="6486000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Adicionando Dockerfile para melhorar odesenvolvimento do projeto">
       <option name="closed" value="true" />

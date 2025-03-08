@@ -11,16 +11,19 @@ public record SignatureDTO(Long id,
                            String category,
                            BigDecimal price,
                            LocalDate billingDate,
-                           String signatureImage) {
+                           String signatureImage,
+                           String imageUrl) {
 
     public static SignatureDTO fromEntity(Signature signature) {
+        String imageUrl = signature.getImageName() != null ? signature.getImageName().getUrl() : null;
         return new SignatureDTO(
                 signature.getId(),
                 signature.getName(),
                 signature.getCategory(),
                 signature.getPrice(),
                 signature.getBillingDate(),
-                signature.getImageName() != null ? signature.getImageName().name() : null
+                signature.getImageName() != null ? signature.getImageName().name() : null,
+                imageUrl
         );
     }
 
