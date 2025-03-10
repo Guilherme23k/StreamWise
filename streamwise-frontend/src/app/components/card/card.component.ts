@@ -31,6 +31,16 @@ export class CardComponent implements OnInit{
   { name: 'Prime Video', url: 'https://img.icons8.com/?size=100&id=Rs68BrhxH0XZ&format=png&color=000000' }
 ];
 
+imageLabels: { [key: string]: string } = {
+  NETFLIX: 'Netflix',
+  PRIMEVIDEO: 'Prime Video'
+};
+
+
+getImageLabel(signature: string): string {
+  return this.imageLabels[signature.toUpperCase()] || signature;
+}
+
   newSignature = {
     name: '',
     category: '',

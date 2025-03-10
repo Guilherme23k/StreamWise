@@ -63,7 +63,7 @@
                 <label for="signatureImage" class="form-label">Escolha uma Imagem</label>
                 <select id="signatureImage" class="form-control" [(ngModel)]="newSignature.signatureImage" name="signatureImage"
                     required>
-                    <option *ngFor="let signature of availableSignatures" [value]="signature.url">
+                    <option *ngFor="let signature of availableSignatures" [value]="signature.name">
                         {{ signature.name }}
                     </option>
                 </select>
