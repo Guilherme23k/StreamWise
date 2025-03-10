@@ -70,7 +70,7 @@ export class CardComponent implements OnInit{
 
 
   getBillingDay(dateStr: String): String{
-    return dateStr.split("-")[1];
+    return dateStr.split("-")[2];
   }
 
   getGridClass(): string{
