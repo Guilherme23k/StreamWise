@@ -1,6 +1,6 @@
-<div *ngIf="loading">Carregando...</div>
 
-<div *ngIf="!loading && !error">
+
+<div>
     <div class="container">
         <ul [ngClass]="getGridClass()">
             <li *ngFor="let signature of signatures">
@@ -32,7 +32,6 @@
     </ng-template>
 </div>
 
-<div *ngIf="error">Ocorreu um erro ao buscar as assinaturas.</div>
 
 <ng-template #content let-modal>
     <div class="modal-header">
@@ -61,9 +60,17 @@
                     name="billingDate" required>
             </div>
             <div class="mb-3">
-                <label for="signatureImage" class="form-label">Imagem</label>
-                <input type="text" id="signatureImage" class="form-control" [(ngModel)]="newSignature.signatureImage"
-                    name="signatureImage" required>
+                <label for="signatureImage" class="form-label">Escolha uma Imagem</label>
+                <select id="signatureImage" class="form-control" [(ngModel)]="newSignature.signatureImage" name="signatureImage"
+                    required>
+                    <option *ngFor="let signature of availableSignatures" [value]="signature.url">
+                        {{ signature.name }}
+                    </option>
+                </select>
+            </div>
+            
+            <div *ngIf="newSignature.signatureImage">
+                <img [src]="newSignature.signatureImage" alt="Prévia da Imagem" width="100">
             </div>
         </form>
     </div>
