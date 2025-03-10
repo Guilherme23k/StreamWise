@@ -33,3 +33,25 @@
 </div>
 
 <div *ngIf="error">Ocorreu um erro ao buscar as assinaturas.</div>
+
+<div class="modal-backdrop" *ngIf="showModal">
+    <div class="modal-content">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <h2>Adicionar assinatura</h2>
+        <form (submit)="addSignature($event)">
+            <label for="name">Nome:</label>
+            <input id="name" type="text" [(ngModel)]="newSignature.name" name="name" required>
+        
+            <label for="category">Categoria:</label>
+            <input id="category" type="text" [(ngModel)]="newSignature.category" name="category" required>
+        
+            <label for="price">Preço:</label>
+            <input id="price" type="number" [(ngModel)]="newSignature.price" name="price" required>
+        
+            <label for="billingDate">Data de Cobrança:</label>
+            <input id="billingDate" type="date" [(ngModel)]="newSignature.billingDate" name="billingDate" required>
+        
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+</div>
