@@ -25,6 +25,12 @@ export class CardComponent implements OnInit{
   signatures: Signature[] = [];
   loading = true;
   error = false;
+
+  availableSignatures = [
+  { name: 'Netflix', url: 'https://img.icons8.com/?size=100&id=20519&format=png&color=000000' },
+  { name: 'Prime Video', url: 'https://img.icons8.com/?size=100&id=Rs68BrhxH0XZ&format=png&color=000000' }
+];
+
   newSignature = {
     name: '',
     category: '',
