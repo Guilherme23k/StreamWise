@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataCardService } from '../../services/data-card.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 interface Signature {
@@ -8,12 +10,13 @@ interface Signature {
   category: string;
   price: number;
   billingDate: string;
+  imageUrl: string; 
 }
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss'
 })
@@ -22,10 +25,22 @@ export class CardComponent implements OnInit{
   signatures: Signature[] = [];
   loading = true;
   error = false;
+  newSignature = {
+    name: '',
+    category: '',
+    price: 0,
+    billingDate: '',
+    signatureImage: ''
+  }
 
-  constructor(private dataCardService: DataCardService){}
+  constructor(private dataCardService: DataCardService, private modalService: NgbModal){}
+
 
   ngOnInit(): void {
+      this.loadSignatures();
+  }
+
+  loadSignatures(): void {
       this.dataCardService.getSignatures().subscribe({
         next: (data) => {
         this.signatures = data;
@@ -38,8 +53,24 @@ export class CardComponent implements OnInit{
       })
   }
 
+  openModal(content: any): void {
+    this.modalService.open(content);
+  }
+
+  addSignature(): void {
+    this.dataCardService.addSignature(this.newSignature).subscribe({
+      next: (response) => {
+        this.signatures.push(response);
+        this.newSignature = { name: '', category: '', price: 0, billingDate: '', signatureImage: '' };
+        this.modalService.dismissAll(); 
+      },
+      error: (err) => console.error('Erro ao adicionar assinatura', err)
+    });
+  }
+
+
   getBillingDay(dateStr: String): String{
-    return dateStr.split("-")[1];
+    return dateStr.split("-")[2];
   }
 
   getGridClass(): string{
@@ -51,5 +82,4 @@ export class CardComponent implements OnInit{
 
     return "";
   }
-
 }

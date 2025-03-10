@@ -21,6 +21,22 @@ public class Signature {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
+    @Enumerated(EnumType.STRING)
+    private SignatureImage imageName;
+
+    public Signature(Long id, String name, String category, BigDecimal price, LocalDate billingDate, User user, SignatureImage imageName) {
+        this.id = id;
+        this.name = name;
+        this.category = category;
+        this.price = price;
+        this.billingDate = billingDate;
+        this.user = user;
+        this.imageName = imageName;
+    }
+
+    public Signature() {
+    }
+
     public Long getId() {
         return id;
     }
@@ -67,5 +83,17 @@ public class Signature {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public SignatureImage getImageName() {
+        return imageName;
+    }
+
+    public void setImageName(SignatureImage imageName) {
+        this.imageName = imageName;
+    }
+
+    public String getImageUrl() {
+        return imageName != null ? imageName.getUrl() : null;
     }
 }

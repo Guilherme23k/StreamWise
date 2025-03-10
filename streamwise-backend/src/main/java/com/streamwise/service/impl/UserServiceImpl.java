@@ -31,13 +31,15 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
 
-    public SignatureDTO convertSignatureToDTO(Signature signature){
+    public SignatureDTO convertSignatureToDTO(Signature signature) {
         return new SignatureDTO(
                 signature.getId(),
                 signature.getName(),
                 signature.getCategory(),
                 signature.getPrice(),
-                signature.getBillingDate()
+                signature.getBillingDate(),
+                signature.getImageName() != null ? signature.getImageName().name() : null,
+                signature.getImageUrl()
         );
     }
 

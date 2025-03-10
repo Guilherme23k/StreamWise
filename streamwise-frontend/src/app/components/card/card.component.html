@@ -1,12 +1,11 @@
 <div *ngIf="loading">Carregando...</div>
 
 <div *ngIf="!loading && !error">
-    <div class="container" *ngIf="signatures.length > 0; else emptyMessage">
+    <div class="container">
         <ul [ngClass]="getGridClass()">
             <li *ngFor="let signature of signatures">
                 <div class="card">
-                    <img class="card-img-top"
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW4zvfRq0Vpjxlzu2Wvx_L7nJNdzy_d9Mx8g&s">
+                    <img class="card-img-top" [src]="signature.imageUrl" alt="Imagem da categoria">
                     <div class="card-body">
                         <span class="badge">{{ signature.category }}</span>
 
@@ -20,6 +19,11 @@
                     </div>
                 </div>
             </li>
+            <li>
+                <div class="card add-card" (click)="openModal(content)">
+                    <div class="add-icon">+</div>
+                </div>
+            </li>
         </ul>
     </div>
 
@@ -29,3 +33,42 @@
 </div>
 
 <div *ngIf="error">Ocorreu um erro ao buscar as assinaturas.</div>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h5 class="modal-title">Adicionar Assinatura</h5>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+    </div>
+    <div class="modal-body">
+        <form #signatureForm="ngForm">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nome</label>
+                <input type="text" id="name" class="form-control" [(ngModel)]="newSignature.name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="category" class="form-label">Categoria</label>
+                <input type="text" id="category" class="form-control" [(ngModel)]="newSignature.category"
+                    name="category" required>
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Preço</label>
+                <input type="number" id="price" class="form-control" [(ngModel)]="newSignature.price" name="price"
+                    required>
+            </div>
+            <div class="mb-3">
+                <label for="billingDate" class="form-label">Data de Cobrança</label>
+                <input type="date" id="billingDate" class="form-control" [(ngModel)]="newSignature.billingDate"
+                    name="billingDate" required>
+            </div>
+            <div class="mb-3">
+                <label for="signatureImage" class="form-label">Imagem</label>
+                <input type="text" id="signatureImage" class="form-control" [(ngModel)]="newSignature.signatureImage"
+                    name="signatureImage" required>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="addSignature()">Adicionar</button>
+    </div>
+</ng-template>

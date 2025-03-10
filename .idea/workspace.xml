@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="refactor: Altera endpoint de /user/signatures para /user/me/signatures para melhorar semântica e reduzir redundancia">
+    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="fix: Altera o convertToDTO no SignatureServiceImpl para que pegue todo o SignatureDTO">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +44,7 @@
         <option value="Interface" />
         <option value="Record" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -271,6 +272,7 @@
       <workItem from="1740618880020" duration="13000" />
       <workItem from="1740620082112" duration="339000" />
       <workItem from="1741222021811" duration="1242000" />
+      <workItem from="1741386101360" duration="6888000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Adicionando Dockerfile para melhorar odesenvolvimento do projeto">
       <option name="closed" value="true" />
@@ -424,21 +426,125 @@
       <option name="project" value="LOCAL" />
       <updated>1740620124047</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="feat: Adiciona enum para mandar logo da assinatura de modo dinâmico">
+      <option name="closed" value="true" />
+      <created>1741387347426</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1741387347426</updated>
+    </task>
+    <task id="LOCAL-00021" summary="feat: Implementa conteudo do enum SignatureImage">
+      <option name="closed" value="true" />
+      <created>1741387570112</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1741387570112</updated>
+    </task>
+    <task id="LOCAL-00022" summary="feat: Adiciona enum image name a entidade Signature">
+      <option name="closed" value="true" />
+      <created>1741387821960</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1741387821960</updated>
+    </task>
+    <task id="LOCAL-00023" summary="feat: Implementa o signatureImage no DTO como uma string">
+      <option name="closed" value="true" />
+      <created>1741388401617</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1741388401617</updated>
+    </task>
+    <task id="LOCAL-00024" summary="feat: Implementa o signatureImage no convertToDto no SignatureServiceImpl">
+      <option name="closed" value="true" />
+      <created>1741388440008</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1741388440008</updated>
+    </task>
+    <task id="LOCAL-00025" summary="feat: Implementa novo metodo para converter DTO em uma entidade Signature">
+      <option name="closed" value="true" />
+      <created>1741389293998</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1741389293998</updated>
+    </task>
+    <task id="LOCAL-00026" summary="feat: Implementa constructor">
+      <option name="closed" value="true" />
+      <created>1741389359353</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1741389359353</updated>
+    </task>
+    <task id="LOCAL-00027" summary="feat: Implementa construtor sem argumento na model Signature">
+      <option name="closed" value="true" />
+      <created>1741389943677</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1741389943677</updated>
+    </task>
+    <task id="LOCAL-00028" summary="refactor: Altera logica que inverte DTO para model">
+      <option name="closed" value="true" />
+      <created>1741389978527</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1741389978527</updated>
+    </task>
+    <task id="LOCAL-00029" summary="update: Altera logica do POST no SignatureController">
+      <option name="closed" value="true" />
+      <created>1741390798254</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1741390798254</updated>
+    </task>
+    <task id="LOCAL-00030" summary="fix: Conserta o metodo que converte Assinatura para DTO no UserServiceImpl">
+      <option name="closed" value="true" />
+      <created>1741391231953</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1741391231953</updated>
+    </task>
+    <task id="LOCAL-00031" summary="feat: Mapeia o nome da imagem para a URL da imagem">
+      <option name="closed" value="true" />
+      <created>1741392758910</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1741392758910</updated>
+    </task>
+    <task id="LOCAL-00032" summary="fix: Altera o convertSignatureToDTO no UserServiceImpl para que pegue todo o SignatureDTO">
+      <option name="closed" value="true" />
+      <created>1741392828993</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1741392828993</updated>
+    </task>
+    <task id="LOCAL-00033" summary="fix: Altera o convertToDTO no SignatureServiceImpl para que pegue todo o SignatureDTO">
+      <option name="closed" value="true" />
+      <created>1741392863057</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1741392863057</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: Adicionando Dockerfile para melhorar odesenvolvimento do projeto" />
-    <MESSAGE value="feat: Adicionando docker-compose.yml" />
-    <MESSAGE value="feat: Adicionado .dockerignore para evitar que arquivos desnecessários sejam copiado para a imagem" />
-    <MESSAGE value="fix: Alterando o COPY para que ele possa puxar corretamente o .jar" />
-    <MESSAGE value="fix: Alterando o dockerfile para que ele possa puxar corretamente o .jar" />
-    <MESSAGE value="fix: Alteracao dos arquivos do docker para rodar a imagem do projeto" />
-    <MESSAGE value="fix: Alteracao dos arquivos do docker para rodar o backend corretamente" />
-    <MESSAGE value="feat: Adicionado query manual que ira buscar a assinatura pelo ID do usuario" />
     <MESSAGE value="fix: Alterado a query de busca para chamar a entidade e nao a classe" />
     <MESSAGE value="fix: Removido conflito de ManyToOne e OneToMany entre as classes de usuario e assinaturas" />
     <MESSAGE value="feat: Adicionado contrato de puxar assinaturas pelo Id do usuario" />
@@ -450,17 +556,20 @@
     <MESSAGE value="chore: configura ddl-auto como create-drop para facilitar testes" />
     <MESSAGE value="refactor: Altera endpoint de /user para /user/signatures para melhorar semântica" />
     <MESSAGE value="refactor: Altera endpoint de /user/signatures para /user/me/signatures para melhorar semântica e reduzir redundancia" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Altera endpoint de /user/signatures para /user/me/signatures para melhorar semântica e reduzir redundancia" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/SignatureController.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="feat: Adiciona enum para mandar logo da assinatura de modo dinâmico" />
+    <MESSAGE value="feat: Implementa conteudo do enum SignatureImage" />
+    <MESSAGE value="feat: Adiciona enum image name a entidade Signature" />
+    <MESSAGE value="feat: Implementa o signatureImage no DTO como uma string" />
+    <MESSAGE value="feat: Implementa o signatureImage no convertToDto no SignatureServiceImpl" />
+    <MESSAGE value="feat: Implementa novo metodo para converter DTO em uma entidade Signature" />
+    <MESSAGE value="feat: Implementa constructor" />
+    <MESSAGE value="feat: Implementa construtor sem argumento na model Signature" />
+    <MESSAGE value="refactor: Altera logica que inverte DTO para model" />
+    <MESSAGE value="update: Altera logica do POST no SignatureController" />
+    <MESSAGE value="fix: Conserta o metodo que converte Assinatura para DTO no UserServiceImpl" />
+    <MESSAGE value="feat: Mapeia o nome da imagem para a URL da imagem" />
+    <MESSAGE value="fix: Altera o convertSignatureToDTO no UserServiceImpl para que pegue todo o SignatureDTO" />
+    <MESSAGE value="fix: Altera o convertToDTO no SignatureServiceImpl para que pegue todo o SignatureDTO" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: Altera o convertToDTO no SignatureServiceImpl para que pegue todo o SignatureDTO" />
   </component>
 </project>
