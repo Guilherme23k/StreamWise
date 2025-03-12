@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="feat: Adiciona metodo que converte entrada no ENUM para uma que o backend persista">
+    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="revert: Remove metodo de conversao para adicionar como classe">
+      <change afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/infraestructure/SignatureImageConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/model/SignatureImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/model/SignatureImage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -274,7 +275,7 @@
       <workItem from="1741222021811" duration="1242000" />
       <workItem from="1741386101360" duration="6888000" />
       <workItem from="1741642609864" duration="1990000" />
-      <workItem from="1741816730754" duration="4240000" />
+      <workItem from="1741816730754" duration="4548000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Adicionando Dockerfile para melhorar odesenvolvimento do projeto">
       <option name="closed" value="true" />
@@ -604,14 +605,21 @@
       <option name="project" value="LOCAL" />
       <updated>1741820435199</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="revert: Remove metodo de conversao para adicionar como classe">
+      <option name="closed" value="true" />
+      <created>1741822017425</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1741822017425</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="chore: configura ddl-auto como create-drop para facilitar testes" />
     <MESSAGE value="refactor: Altera endpoint de /user para /user/signatures para melhorar semântica" />
     <MESSAGE value="refactor: Altera endpoint de /user/signatures para /user/me/signatures para melhorar semântica e reduzir redundancia" />
     <MESSAGE value="feat: Adiciona enum para mandar logo da assinatura de modo dinâmico" />
@@ -636,6 +644,7 @@
     <MESSAGE value="refactor: Altera metodo create do SignatureController para usar o codigo de assinatura da imagem" />
     <MESSAGE value="fix: Altera convertSignatureToDTO do servico de UserServiceImpl" />
     <MESSAGE value="feat: Adiciona metodo que converte entrada no ENUM para uma que o backend persista" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Adiciona metodo que converte entrada no ENUM para uma que o backend persista" />
+    <MESSAGE value="revert: Remove metodo de conversao para adicionar como classe" />
+    <option name="LAST_COMMIT_MESSAGE" value="revert: Remove metodo de conversao para adicionar como classe" />
   </component>
 </project>
