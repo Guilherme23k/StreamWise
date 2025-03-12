@@ -28,6 +28,10 @@ public class Signature {
         return imageName != null ? imageName.getDisplayName() : null;
     }
 
+    public String getImageCode(){
+        return imageName != null ? imageName.name() : null;
+    }
+
     public Signature(Long id, String name, String category, BigDecimal price, LocalDate billingDate, User user, SignatureImage imageName) {
         this.id = id;
         this.name = name;
