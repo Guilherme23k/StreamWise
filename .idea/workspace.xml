@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="fix: Altera o convertToDTO no SignatureServiceImpl para que pegue todo o SignatureDTO" />
+    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="refactor: Adiciona nome do display da imagem da assinatura para melhorar experiencia no front">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/model/Signature.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/model/Signature.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -271,7 +274,8 @@
       <workItem from="1740620082112" duration="339000" />
       <workItem from="1741222021811" duration="1242000" />
       <workItem from="1741386101360" duration="6888000" />
-      <workItem from="1741642609864" duration="612000" />
+      <workItem from="1741642609864" duration="1990000" />
+      <workItem from="1741816730754" duration="739000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Adicionando Dockerfile para melhorar odesenvolvimento do projeto">
       <option name="closed" value="true" />
@@ -537,14 +541,21 @@
       <option name="project" value="LOCAL" />
       <updated>1741392863057</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="refactor: Adiciona nome do display da imagem da assinatura para melhorar experiencia no front">
+      <option name="closed" value="true" />
+      <created>1741647218453</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1741647218453</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix: Alterado a query de busca para chamar a entidade e nao a classe" />
     <MESSAGE value="fix: Removido conflito de ManyToOne e OneToMany entre as classes de usuario e assinaturas" />
     <MESSAGE value="feat: Adicionado contrato de puxar assinaturas pelo Id do usuario" />
     <MESSAGE value="feat: Adicionado implementacao do contrato para puxar as assinaturas pelo id do usuario" />
@@ -569,6 +580,7 @@
     <MESSAGE value="feat: Mapeia o nome da imagem para a URL da imagem" />
     <MESSAGE value="fix: Altera o convertSignatureToDTO no UserServiceImpl para que pegue todo o SignatureDTO" />
     <MESSAGE value="fix: Altera o convertToDTO no SignatureServiceImpl para que pegue todo o SignatureDTO" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: Altera o convertToDTO no SignatureServiceImpl para que pegue todo o SignatureDTO" />
+    <MESSAGE value="refactor: Adiciona nome do display da imagem da assinatura para melhorar experiencia no front" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: Adiciona nome do display da imagem da assinatura para melhorar experiencia no front" />
   </component>
 </project>

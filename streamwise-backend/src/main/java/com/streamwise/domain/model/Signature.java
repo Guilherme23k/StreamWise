@@ -24,6 +24,10 @@ public class Signature {
     @Enumerated(EnumType.STRING)
     private SignatureImage imageName;
 
+    public String getImageDisplayName(){
+        return imageName != null ? imageName.getDisplayName() : null;
+    }
+
     public Signature(Long id, String name, String category, BigDecimal price, LocalDate billingDate, User user, SignatureImage imageName) {
         this.id = id;
         this.name = name;
