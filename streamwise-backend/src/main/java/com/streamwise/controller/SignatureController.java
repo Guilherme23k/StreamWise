@@ -75,7 +75,7 @@ public class SignatureController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         User loggedUser = (User) authentication.getPrincipal();
 
-        SignatureImage signatureImage = signatureDTO.signatureImage() != null ? SignatureImage.valueOf(signatureDTO.signatureImage()) : null;
+        SignatureImage signatureImage = signatureDTO.signatureImageCode() != null ? SignatureImage.valueOf(signatureDTO.signatureImageCode()) : null;
 
         Signature signatureToCreate = new Signature(
                 null,

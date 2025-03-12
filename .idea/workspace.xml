@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="feat: Adiciona Método para retornar o valor da enumeração">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/dto/SignatureDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/dto/SignatureDTO.java" afterDir="false" />
+    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="refactor: Altera metodo convertToDTO para ser compativel com o proprio DTO">
+      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/SignatureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/SignatureController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,7 +274,7 @@
       <workItem from="1741222021811" duration="1242000" />
       <workItem from="1741386101360" duration="6888000" />
       <workItem from="1741642609864" duration="1990000" />
-      <workItem from="1741816730754" duration="1820000" />
+      <workItem from="1741816730754" duration="2140000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Adicionando Dockerfile para melhorar odesenvolvimento do projeto">
       <option name="closed" value="true" />
@@ -565,15 +564,29 @@
       <option name="project" value="LOCAL" />
       <updated>1741817735084</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="refactor: Altera SignatureDTO para ser compativel com a model">
+      <option name="closed" value="true" />
+      <created>1741818795601</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1741818795601</updated>
+    </task>
+    <task id="LOCAL-00038" summary="refactor: Altera metodo convertToDTO para ser compativel com o proprio DTO">
+      <option name="closed" value="true" />
+      <created>1741818917346</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1741818917346</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: Adicionado implementacao do contrato para puxar as assinaturas pelo id do usuario" />
-    <MESSAGE value="feat: Adicionado metodo do JWT que ira puxar o id do usuario pelo token" />
     <MESSAGE value="feat: Adicionado metodo no controller para puxar assinatura pelo usuario" />
     <MESSAGE value="fix: Alteracao na logica de negocio na funcionalidade de puxar assinaturas pelo id do usuario" />
     <MESSAGE value="fix: Correcao de bugs no backend que impossibilitavam de subir a aplicacao" />
@@ -597,6 +610,8 @@
     <MESSAGE value="refactor: Adiciona nome do display da imagem da assinatura para melhorar experiencia no front" />
     <MESSAGE value="feat: Adiciona método para retornar o nome de exibicao" />
     <MESSAGE value="feat: Adiciona Método para retornar o valor da enumeração" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Adiciona Método para retornar o valor da enumeração" />
+    <MESSAGE value="refactor: Altera SignatureDTO para ser compativel com a model" />
+    <MESSAGE value="refactor: Altera metodo convertToDTO para ser compativel com o proprio DTO" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: Altera metodo convertToDTO para ser compativel com o proprio DTO" />
   </component>
 </project>
