@@ -79,7 +79,8 @@ public class SignatureServiceImpl implements SignatureService {
                 signature.getCategory(),
                 signature.getPrice(),
                 signature.getBillingDate(),
-                signature.getImageName() != null ? signature.getImageName().name() : null,
+                signature.getImageCode(),
+                signature.getImageDisplayName(),
                 signature.getImageUrl()
         );
     }
