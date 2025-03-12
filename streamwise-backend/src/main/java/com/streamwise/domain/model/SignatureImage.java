@@ -22,17 +22,4 @@ public enum SignatureImage {
         return displayName;
     }
 
-    public static SignatureImage fromString(String value){
-        if (value == null || value.isBlank()) {
-            throw new IllegalArgumentException("SignatureImage cannot be null or empty");
-        }
-
-        String formattedValue = value.replace(" ", "").toUpperCase();
-
-        return Arrays.stream(SignatureImage.values())
-                .filter(e -> e.name().equals(formattedValue))
-                .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("Invalid SignatureImage: " + value));
-    }
-
 }
