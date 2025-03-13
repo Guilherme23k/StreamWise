@@ -15,18 +15,18 @@ public enum SignatureImage {
     }
 
     public static SignatureImage fromString(String value) {
+        if (value == null || value.isBlank()) {
+            throw new IllegalArgumentException("SignatureImage não pode ser null ou vazia");
+        }
 
-    if(value == null || value.isBlank()) {
-        throw new IllegalArgumentException("SignatureImage nao pode ser null ou vazia");
+        String formattedValue = value.replace(" ", "").toUpperCase();
+
+        return Arrays.stream(SignatureImage.values())
+                .filter(e -> e.name().equals(formattedValue))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Invalid SignatureImage: " + value));
     }
 
-    String formattedValue = value.replace(" ", "").toUpperCase();
-
-    return Arrays.stream(SignatureImage.values())
-            .filter(e -> e.name().equals(formattedValue))
-            .findFirst()
-            .orElseThrow(() -> new IllegalArgumentException("Invalid SignatureImage: " + value));
-    }
 
     public String getUrl(){
         return url;

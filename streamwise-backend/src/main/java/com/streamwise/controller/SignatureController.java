@@ -71,11 +71,17 @@ public class SignatureController {
     @PostMapping
     public ResponseEntity<SignatureDTO> create(@RequestBody SignatureDTO signatureDTO){
 
-
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         User loggedUser = (User) authentication.getPrincipal();
 
-        SignatureImage signatureImage = signatureDTO.signatureImageCode() != null ? SignatureImage.valueOf(signatureDTO.signatureImageCode()) : null;
+
+        SignatureImage signatureImage = null;
+        if (signatureDTO.signatureImageCode() != null) {
+
+            String formattedValue = signatureDTO.signatureImageCode().replace(" ", "").toUpperCase();
+            signatureImage = SignatureImage.fromString(formattedValue);
+        }
+
 
         Signature signatureToCreate = new Signature(
                 null,
@@ -87,14 +93,18 @@ public class SignatureController {
                 signatureImage
         );
 
+
         Signature signatureCreated = signatureService.create(signatureToCreate, loggedUser);
+
 
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}")
                 .buildAndExpand(signatureCreated.getId())
                 .toUri();
 
+
         SignatureDTO signatureDTOResponse = signatureService.convertToDTO(signatureCreated);
+
 
         return ResponseEntity.created(location).body(signatureDTOResponse);
     }

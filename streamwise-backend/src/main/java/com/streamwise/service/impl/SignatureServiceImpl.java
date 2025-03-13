@@ -2,6 +2,7 @@ package com.streamwise.service.impl;
 
 import com.streamwise.controller.dto.SignatureDTO;
 import com.streamwise.domain.model.Signature;
+import com.streamwise.domain.model.SignatureImage;
 import com.streamwise.domain.model.User;
 import com.streamwise.domain.repository.SignatureRepository;
 import com.streamwise.service.SignatureService;
@@ -34,20 +35,14 @@ public class SignatureServiceImpl implements SignatureService {
     @Override
     public Signature create(Signature signatureToCreate, User user) {
 
-        System.out.println("Tentando criar assinatura: " + signatureToCreate.getName() + ", " + signatureToCreate.getCategory());
+            if (signatureRepository.existsByUserIdAndNameAndCategory(user.getId(), signatureToCreate.getName(), signatureToCreate.getCategory())) {
+                System.out.println("Assinatura já existente: " + signatureToCreate.getName() + ", " + signatureToCreate.getCategory());
+                throw new IllegalArgumentException("Assinatura já existente");
+            }
 
+            signatureToCreate.setUser(user);
+            return signatureRepository.save(signatureToCreate);
 
-        if (signatureRepository.existsByUserIdAndNameAndCategory(user.getId(), signatureToCreate.getName(), signatureToCreate.getCategory())) {
-
-            System.out.println("Assinatura já existente: " + signatureToCreate.getName() + ", " + signatureToCreate.getCategory());
-            throw new IllegalArgumentException("Assinatura já existente");
-        }
-
-        System.out.println("Post feito na assinatura " + signatureToCreate.getName());
-
-
-        signatureToCreate.setUser(user);
-        return signatureRepository.save(signatureToCreate);
     }
 
 

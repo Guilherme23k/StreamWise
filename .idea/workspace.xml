@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="revert: Remove metodo de conversao para adicionar como classe">
-      <change afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/infraestructure/SignatureImageConverter.java" afterDir="false" />
+    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="feat: Adiciona metodo que chama classe que fara a conversao do JSON de entrada">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/SignatureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/SignatureController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/model/SignatureImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/domain/model/SignatureImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/infraestructure/SignatureImageConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/service/impl/SignatureServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/service/impl/SignatureServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,8 +47,8 @@
       <list>
         <option value="Interface" />
         <option value="Record" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -275,7 +278,7 @@
       <workItem from="1741222021811" duration="1242000" />
       <workItem from="1741386101360" duration="6888000" />
       <workItem from="1741642609864" duration="1990000" />
-      <workItem from="1741816730754" duration="4548000" />
+      <workItem from="1741816730754" duration="6998000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Adicionando Dockerfile para melhorar odesenvolvimento do projeto">
       <option name="closed" value="true" />
@@ -613,15 +616,29 @@
       <option name="project" value="LOCAL" />
       <updated>1741822017425</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="feat: Adiciona classe responsavel pela conversao da entrada do JSON">
+      <option name="closed" value="true" />
+      <created>1741822327527</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1741822327527</updated>
+    </task>
+    <task id="LOCAL-00044" summary="feat: Adiciona metodo que chama classe que fara a conversao do JSON de entrada">
+      <option name="closed" value="true" />
+      <created>1741822344086</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1741822344086</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor: Altera endpoint de /user para /user/signatures para melhorar semântica" />
-    <MESSAGE value="refactor: Altera endpoint de /user/signatures para /user/me/signatures para melhorar semântica e reduzir redundancia" />
     <MESSAGE value="feat: Adiciona enum para mandar logo da assinatura de modo dinâmico" />
     <MESSAGE value="feat: Implementa conteudo do enum SignatureImage" />
     <MESSAGE value="feat: Adiciona enum image name a entidade Signature" />
@@ -645,6 +662,8 @@
     <MESSAGE value="fix: Altera convertSignatureToDTO do servico de UserServiceImpl" />
     <MESSAGE value="feat: Adiciona metodo que converte entrada no ENUM para uma que o backend persista" />
     <MESSAGE value="revert: Remove metodo de conversao para adicionar como classe" />
-    <option name="LAST_COMMIT_MESSAGE" value="revert: Remove metodo de conversao para adicionar como classe" />
+    <MESSAGE value="feat: Adiciona classe responsavel pela conversao da entrada do JSON" />
+    <MESSAGE value="feat: Adiciona metodo que chama classe que fara a conversao do JSON de entrada" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Adiciona metodo que chama classe que fara a conversao do JSON de entrada" />
   </component>
 </project>
