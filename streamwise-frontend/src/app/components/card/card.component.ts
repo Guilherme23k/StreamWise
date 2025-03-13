@@ -4,15 +4,6 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-interface Signature {
-  id: number;
-  name: string;
-  category: string;
-  price: number;
-  billingDate: string;
-  imageUrl: string; 
-}
-
 @Component({
   selector: 'app-card',
   standalone: true,
@@ -20,45 +11,42 @@ interface Signature {
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss'
 })
-export class CardComponent implements OnInit{
+export class CardComponent implements OnInit {
 
-  signatures: Signature[] = [];
+  signatures: any[] = [];
   loading = true;
   error = false;
 
+
   availableSignatures = [
-  { name: 'Netflix', url: 'https://img.icons8.com/?size=100&id=20519&format=png&color=000000' },
-  { name: 'Prime Video', url: 'https://img.icons8.com/?size=100&id=Rs68BrhxH0XZ&format=png&color=000000' }
-];
+    { name: 'Netflix', url: 'https://img.icons8.com/?size=100&id=20519&format=png&color=000000' },
+    { name: 'Prime Video', url: 'https://img.icons8.com/?size=100&id=Rs68BrhxH0XZ&format=png&color=000000' }
+  ];
 
-imageLabels: { [key: string]: string } = {
-  NETFLIX: 'Netflix',
-  PRIMEVIDEO: 'Prime Video'
-};
-
-
-getImageLabel(signature: string): string {
-  return this.imageLabels[signature.toUpperCase()] || signature;
-}
 
   newSignature = {
     name: '',
     category: '',
     price: 0,
     billingDate: '',
-    signatureImage: ''
+    signatureImageCode: ''  
   }
 
-  constructor(private dataCardService: DataCardService, private modalService: NgbModal){}
-
+  constructor(private dataCardService: DataCardService, private modalService: NgbModal) {}
 
   ngOnInit(): void {
-      this.loadSignatures();
+    this.loadSignatures();
   }
 
+  getImageUrl(signatureName: string): string {
+  const selectedSignature = this.availableSignatures.find(s => s.name === signatureName);
+  return selectedSignature ? selectedSignature.url : '';
+}
+
+  
   loadSignatures(): void {
-      this.dataCardService.getSignatures().subscribe({
-        next: (data) => {
+    this.dataCardService.getSignatures().subscribe({
+      next: (data) => {
         this.signatures = data;
         this.loading = false;
       },
@@ -66,30 +54,41 @@ getImageLabel(signature: string): string {
         this.error = true;
         this.loading = false;
       }
-      })
+    });
   }
 
+ 
   openModal(content: any): void {
     this.modalService.open(content);
   }
 
   addSignature(): void {
+
+    this.newSignature.signatureImageCode = this.newSignature.signatureImageCode.toUpperCase(); 
+
+
     this.dataCardService.addSignature(this.newSignature).subscribe({
       next: (response) => {
-        this.signatures.push(response);
-        this.newSignature = { name: '', category: '', price: 0, billingDate: '', signatureImage: '' };
-        this.modalService.dismissAll(); 
+        console.log('Resposta do Backend:', response);  
+        this.signatures.push(response); 
+        this.resetNewSignature();  
+        this.modalService.dismissAll();  
       },
       error: (err) => console.error('Erro ao adicionar assinatura', err)
     });
   }
 
-
-  getBillingDay(dateStr: String): String{
-    return dateStr.split("-")[2];
+  resetNewSignature(): void {
+    this.newSignature = { name: '', category: '', price: 0, billingDate: '', signatureImageCode: '' };
   }
 
-  getGridClass(): string{
+  
+  getBillingDay(dateStr: String): String {
+    return dateStr.split("-")[2];  
+  }
+
+  
+  getGridClass(): string {
     const count = this.signatures.length;
     if (count === 1) return "grid-one";
     if (count === 2) return "grid-two";
@@ -98,4 +97,14 @@ getImageLabel(signature: string): string {
 
     return "";
   }
+
+  
+  selectSignatureImageCode(signatureName: string): void {
+    
+    const selectedSignature = this.availableSignatures.find(s => s.name === signatureName);
+    if (selectedSignature) {
+      this.newSignature.signatureImageCode = selectedSignature.name.toUpperCase();
+    }
+  }
+
 }
