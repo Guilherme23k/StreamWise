@@ -11,7 +11,8 @@ public record SignatureDTO(Long id,
                            String category,
                            BigDecimal price,
                            LocalDate billingDate,
-                           String signatureImage,
+                           String signatureImageCode,
+                           String signatureImageName,
                            String imageUrl) {
 
     public static SignatureDTO fromEntity(Signature signature) {
@@ -22,9 +23,10 @@ public record SignatureDTO(Long id,
                 signature.getCategory(),
                 signature.getPrice(),
                 signature.getBillingDate(),
-                signature.getImageName() != null ? signature.getImageName().name() : null,
+                signature.getImageCode(),
+                signature.getImageDisplayName(),
                 imageUrl
-        );
+                );
     }
 
 
@@ -36,8 +38,8 @@ public record SignatureDTO(Long id,
         signature.setPrice(price);
         signature.setBillingDate(billingDate);
 
-        if (signatureImage != null) {
-            signature.setImageName(SignatureImage.valueOf(signatureImage));
+        if (signatureImageCode != null) {
+            signature.setImageName(SignatureImage.valueOf(signatureImageCode));
         }
 
         return signature;

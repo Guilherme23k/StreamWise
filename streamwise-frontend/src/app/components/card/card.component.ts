@@ -4,15 +4,6 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-interface Signature {
-  id: number;
-  name: string;
-  category: string;
-  price: number;
-  billingDate: string;
-  imageUrl: string; 
-}
-
 @Component({
   selector: 'app-card',
   standalone: true,
@@ -20,29 +11,42 @@ interface Signature {
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss'
 })
-export class CardComponent implements OnInit{
+export class CardComponent implements OnInit {
 
-  signatures: Signature[] = [];
+  signatures: any[] = [];
   loading = true;
   error = false;
-  newSignature = {
-    name: '',
-    category: '',
-    price: 0,
-    billingDate: '',
-    signatureImage: ''
-  }
+  selectedSignature: any = {
+  name: '',
+  category: '',
+  price: 0,
+  billingDate: '',
+  signatureImageCode: ''
+};
+  isEditMode = false;
 
-  constructor(private dataCardService: DataCardService, private modalService: NgbModal){}
 
+  availableSignatures = [
+    { name: 'Netflix', url: 'https://img.icons8.com/?size=100&id=20519&format=png&color=000000' },
+    { name: 'Prime Video', url: 'https://img.icons8.com/?size=100&id=Rs68BrhxH0XZ&format=png&color=000000' }
+  ];
+
+
+  constructor(private dataCardService: DataCardService, private modalService: NgbModal) {}
 
   ngOnInit(): void {
-      this.loadSignatures();
+    this.loadSignatures();
   }
 
+  getImageUrl(signatureName: string): string {
+  const selectedSignature = this.availableSignatures.find(s => s.name === signatureName);
+  return selectedSignature ? selectedSignature.url : '';
+}
+
+  
   loadSignatures(): void {
-      this.dataCardService.getSignatures().subscribe({
-        next: (data) => {
+    this.dataCardService.getSignatures().subscribe({
+      next: (data) => {
         this.signatures = data;
         this.loading = false;
       },
@@ -50,30 +54,72 @@ export class CardComponent implements OnInit{
         this.error = true;
         this.loading = false;
       }
-      })
+    });
   }
 
+ 
   openModal(content: any): void {
+    this.isEditMode = false;
+    this.selectedSignature = { name: '', category: '', price: 0, billingDate: '', signatureImageCode: '' };
+    this.modalService.open(content);
+  }
+
+  openEditModal(content: any, signature: any):void{
+    this.isEditMode = true;
+    this.selectedSignature = { ...signature };
     this.modalService.open(content);
   }
 
   addSignature(): void {
-    this.dataCardService.addSignature(this.newSignature).subscribe({
+
+    this.selectedSignature.signatureImageCode = this.selectedSignature.signatureImageCode.toUpperCase(); 
+
+
+    this.dataCardService.addSignature(this.selectedSignature).subscribe({
       next: (response) => {
-        this.signatures.push(response);
-        this.newSignature = { name: '', category: '', price: 0, billingDate: '', signatureImage: '' };
-        this.modalService.dismissAll(); 
+        console.log('Resposta do Backend:', response);  
+        this.signatures.push(response); 
+        this.resetselectedSignature();  
+        this.modalService.dismissAll();
+        this.loadSignatures();
       },
       error: (err) => console.error('Erro ao adicionar assinatura', err)
     });
   }
 
+  editSignature(): void{
+    const id = this.selectedSignature.id; 
+    const updateSignature = {
+      name: this.selectedSignature.name,
+    category: this.selectedSignature.category,
+    price: this.selectedSignature.price,
+    billingDate: this.selectedSignature.billingDate,
+    signatureImageCode: this.selectedSignature.signatureImageCode
+    };
 
-  getBillingDay(dateStr: String): String{
-    return dateStr.split("-")[2];
+    this.dataCardService.editSignature(id, updateSignature).subscribe(
+      response => {
+        console.log('Assinatura editada com sucesso', response);
+        this.modalService.dismissAll();
+        this.loadSignatures();
+      },
+      error => {
+        console.log('Erro ao editar assinatura', error)
+      }
+    )
   }
 
-  getGridClass(): string{
+  resetselectedSignature(): void {
+    this.selectedSignature = { name: '', category: '', price: 0, billingDate: '', signatureImageCode: '' };
+  }
+
+  
+  getBillingDay(dateStr: String): String {
+    return dateStr.split("-")[2];  
+  }
+
+  
+  getGridClass(): string {
     const count = this.signatures.length;
     if (count === 1) return "grid-one";
     if (count === 2) return "grid-two";
@@ -82,4 +128,14 @@ export class CardComponent implements OnInit{
 
     return "";
   }
+
+  
+  selectSignatureImageCode(signatureName: string): void {
+    
+    const selectedSignature = this.availableSignatures.find(s => s.name === signatureName);
+    if (selectedSignature) {
+      this.selectedSignature.signatureImageCode = selectedSignature.name.toUpperCase();
+    }
+  }
+
 }

@@ -1,6 +1,6 @@
-<div *ngIf="loading">Carregando...</div>
 
-<div *ngIf="!loading && !error">
+
+<div>
     <div class="container">
         <ul [ngClass]="getGridClass()">
             <li *ngFor="let signature of signatures">
@@ -14,8 +14,10 @@
                         <p class="price">R$ {{ signature.price }}</p>
             
                         <p class="billing-date">
-                            <i class="fas fa-calendar-alt"></i> Todo dia {{ getBillingDay(signature.billingDate) }}
+                            <i class="bi bi-calendar-event"></i> Todo dia {{ getBillingDay(signature.billingDate) }}
                         </p>
+
+                        <i class="bi bi-pencil-square" (click)="openEditModal(content, signature)"></i>
                     </div>
                 </div>
             </li>
@@ -32,43 +34,54 @@
     </ng-template>
 </div>
 
-<div *ngIf="error">Ocorreu um erro ao buscar as assinaturas.</div>
 
 <ng-template #content let-modal>
     <div class="modal-header">
-        <h5 class="modal-title">Adicionar Assinatura</h5>
+        <h5 class="modal-title">
+            {{ isEditMode ? 'Editar Assinatura' : 'Adicionar Assinatura' }}
+        </h5>
         <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
     </div>
     <div class="modal-body">
         <form #signatureForm="ngForm">
             <div class="mb-3">
                 <label for="name" class="form-label">Nome</label>
-                <input type="text" id="name" class="form-control" [(ngModel)]="newSignature.name" name="name" required>
+                <input type="text" id="name" class="form-control" [(ngModel)]="selectedSignature.name" name="name" required>
             </div>
             <div class="mb-3">
                 <label for="category" class="form-label">Categoria</label>
-                <input type="text" id="category" class="form-control" [(ngModel)]="newSignature.category"
+                <input type="text" id="category" class="form-control" [(ngModel)]="selectedSignature.category"
                     name="category" required>
             </div>
             <div class="mb-3">
                 <label for="price" class="form-label">Preço</label>
-                <input type="number" id="price" class="form-control" [(ngModel)]="newSignature.price" name="price"
+                <input type="number" id="price" class="form-control" [(ngModel)]="selectedSignature.price" name="price"
                     required>
             </div>
             <div class="mb-3">
                 <label for="billingDate" class="form-label">Data de Cobrança</label>
-                <input type="date" id="billingDate" class="form-control" [(ngModel)]="newSignature.billingDate"
+                <input type="date" id="billingDate" class="form-control" [(ngModel)]="selectedSignature.billingDate"
                     name="billingDate" required>
             </div>
             <div class="mb-3">
-                <label for="signatureImage" class="form-label">Imagem</label>
-                <input type="text" id="signatureImage" class="form-control" [(ngModel)]="newSignature.signatureImage"
-                    name="signatureImage" required>
+                <label for="signatureImageCode" class="form-label">Escolha uma Imagem</label>
+                <select id="signatureImageCode" class="form-control" [(ngModel)]="selectedSignature.signatureImageCode"
+                    name="signatureImageCode" required>
+                    <option *ngFor="let signature of availableSignatures" [value]="signature.name">
+                        {{ signature.name }}
+                    </option>
+                </select>
+            </div>
+
+            <div *ngIf="selectedSignature.signatureImageCode">
+                <img [src]="getImageUrl(selectedSignature.signatureImageCode)" alt="Prévia da Imagem" width="100">
             </div>
         </form>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Cancelar</button>
-        <button type="button" class="btn btn-primary" (click)="addSignature()">Adicionar</button>
+        <button type="button" class="btn btn-primary" (click)="isEditMode ? editSignature() : addSignature()">
+            {{ isEditMode ? 'Salvar Alterações' : 'Adicionar Assinatura' }}
+        </button>
     </div>
 </ng-template>
