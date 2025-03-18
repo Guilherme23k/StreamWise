@@ -84,14 +84,14 @@ export class CardComponent implements OnInit {
     });
   }
 
-  editSignature(signature: any): void{
-    const id = signature.id; 
+  editSignature(): void{
+    const id = this.selectedSignature.id; 
     const updateSignature = {
-      name: signature.name,
-      category: signature.category,
-      price: signature.price,
-      billingDate: signature.billingDate,
-      signatureImageCode: signature.signatureImageCode
+      name: this.selectedSignature.name,
+    category: this.selectedSignature.category,
+    price: this.selectedSignature.price,
+    billingDate: this.selectedSignature.billingDate,
+    signatureImageCode: this.selectedSignature.signatureImageCode
     };
 
     this.dataCardService.editSignature(id, updateSignature).subscribe(
