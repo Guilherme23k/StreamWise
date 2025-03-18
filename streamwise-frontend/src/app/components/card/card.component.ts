@@ -16,7 +16,13 @@ export class CardComponent implements OnInit {
   signatures: any[] = [];
   loading = true;
   error = false;
-  selectedSignature: any = null;
+  selectedSignature: any = {
+  name: '',
+  category: '',
+  price: 0,
+  billingDate: '',
+  signatureImageCode: ''
+};
   isEditMode = false;
 
 
@@ -25,14 +31,6 @@ export class CardComponent implements OnInit {
     { name: 'Prime Video', url: 'https://img.icons8.com/?size=100&id=Rs68BrhxH0XZ&format=png&color=000000' }
   ];
 
-
-  newSignature = {
-    name: '',
-    category: '',
-    price: 0,
-    billingDate: '',
-    signatureImageCode: ''  
-  }
 
   constructor(private dataCardService: DataCardService, private modalService: NgbModal) {}
 
@@ -62,8 +60,8 @@ export class CardComponent implements OnInit {
  
   openModal(content: any): void {
     this.isEditMode = false;
+    this.selectedSignature = { name: '', category: '', price: 0, billingDate: '', signatureImageCode: '' };
     this.modalService.open(content);
-    this.selectedSignature = {};
   }
 
   openEditModal(content: any, signature: any):void{
@@ -74,14 +72,14 @@ export class CardComponent implements OnInit {
 
   addSignature(): void {
 
-    this.newSignature.signatureImageCode = this.newSignature.signatureImageCode.toUpperCase(); 
+    this.selectedSignature.signatureImageCode = this.selectedSignature.signatureImageCode.toUpperCase(); 
 
 
-    this.dataCardService.addSignature(this.newSignature).subscribe({
+    this.dataCardService.addSignature(this.selectedSignature).subscribe({
       next: (response) => {
         console.log('Resposta do Backend:', response);  
         this.signatures.push(response); 
-        this.resetNewSignature();  
+        this.resetselectedSignature();  
         this.modalService.dismissAll();  
       },
       error: (err) => console.error('Erro ao adicionar assinatura', err)
@@ -108,8 +106,8 @@ export class CardComponent implements OnInit {
     )
   }
 
-  resetNewSignature(): void {
-    this.newSignature = { name: '', category: '', price: 0, billingDate: '', signatureImageCode: '' };
+  resetselectedSignature(): void {
+    this.selectedSignature = { name: '', category: '', price: 0, billingDate: '', signatureImageCode: '' };
   }
 
   
@@ -133,7 +131,7 @@ export class CardComponent implements OnInit {
     
     const selectedSignature = this.availableSignatures.find(s => s.name === signatureName);
     if (selectedSignature) {
-      this.newSignature.signatureImageCode = selectedSignature.name.toUpperCase();
+      this.selectedSignature.signatureImageCode = selectedSignature.name.toUpperCase();
     }
   }
 
