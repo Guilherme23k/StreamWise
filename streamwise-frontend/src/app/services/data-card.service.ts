@@ -7,13 +7,13 @@ import { Observable } from 'rxjs';
 })
 export class DataCardService {
 
-  private apiUrl = 'http://localhost:8080/signatures/user/me/signatures';
-  private apiUrlPOST = 'http://localhost:8080/signatures';
+  private apiUrlGET = 'http://localhost:8080/signatures/user/me/signatures';
+  private apiUrl = 'http://localhost:8080/signatures';
 
   constructor(private http: HttpClient) { }
 
   getSignatures(): Observable<any>{
-    return this.http.get<any>(this.apiUrl);
+    return this.http.get<any>(this.apiUrlGET);
   }
 
   addSignature(signatureData: any): Observable<any> {
@@ -22,6 +22,8 @@ export class DataCardService {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`
     });
-    return this.http.post<any>(this.apiUrlPOST, signatureData, { headers });
+    return this.http.post<any>(this.apiUrl, signatureData, { headers });
   }
+
+
 }

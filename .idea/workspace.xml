@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="Alteracoes gerais, remocao de classe propria para conversao e passado direto para o controller onde refatora a entrada de dados para o ENUM ser lido corretamente">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="Alteracoes gerais, remocao de classe propria para conversao e passado direto para o controller onde refatora a entrada de dados para o ENUM ser lido corretamente" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -274,7 +272,7 @@
       <workItem from="1741222021811" duration="1242000" />
       <workItem from="1741386101360" duration="6888000" />
       <workItem from="1741642609864" duration="1990000" />
-      <workItem from="1741816730754" duration="8579000" />
+      <workItem from="1741816730754" duration="8845000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Adicionando Dockerfile para melhorar odesenvolvimento do projeto">
       <option name="closed" value="true" />
