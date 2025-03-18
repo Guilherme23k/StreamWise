@@ -78,6 +78,26 @@ export class CardComponent implements OnInit {
     });
   }
 
+  editSignature(signature: any): void{
+    const id = signature.id; 
+    const updateSignature = {
+      name: signature.name,
+      category: signature.category,
+      price: signature.price,
+      billingDate: signature.billingDate,
+      signatureImageCode: signature.signatureImageCode
+    };
+
+    this.dataCardService.editSignature(id, updateSignature).subscribe(
+      response => {
+        console.log('Assinatura editada com sucesso', response);
+      },
+      error => {
+        console.log('Erro ao editar assinatura', error)
+      }
+    )
+  }
+
   resetNewSignature(): void {
     this.newSignature = { name: '', category: '', price: 0, billingDate: '', signatureImageCode: '' };
   }
