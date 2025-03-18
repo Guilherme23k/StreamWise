@@ -25,5 +25,9 @@ export class DataCardService {
     return this.http.post<any>(this.apiUrl, signatureData, { headers });
   }
 
+  editSignature(id: number, signatureData: any): Observable<any> {
+    return this.http.put(this.apiUrl + `{$id}`, signatureData);
+  }
+
 
 }
