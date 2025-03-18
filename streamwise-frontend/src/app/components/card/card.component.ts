@@ -16,6 +16,7 @@ export class CardComponent implements OnInit {
   signatures: any[] = [];
   loading = true;
   error = false;
+  selectedSignature: any = null;
 
 
   availableSignatures = [
