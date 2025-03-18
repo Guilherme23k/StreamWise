@@ -37,7 +37,9 @@
 
 <ng-template #content let-modal>
     <div class="modal-header">
-        <h5 class="modal-title">Adicionar Assinatura</h5>
+        <h5 class="modal-title">
+            {{ isEditMode ? 'Editar Assinatura' : 'Adicionar Assinatura' }}
+        </h5>
         <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
     </div>
     <div class="modal-body">
