@@ -63,6 +63,11 @@ export class CardComponent implements OnInit {
     this.modalService.open(content);
   }
 
+  openEditModal(content: any, signature: any):void{
+    this.selectedSignature = {...signature};
+    this.modalService.open(content);
+  }
+
   addSignature(): void {
 
     this.newSignature.signatureImageCode = this.newSignature.signatureImageCode.toUpperCase(); 
