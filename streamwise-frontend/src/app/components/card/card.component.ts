@@ -80,7 +80,8 @@ export class CardComponent implements OnInit {
         console.log('Resposta do Backend:', response);  
         this.signatures.push(response); 
         this.resetselectedSignature();  
-        this.modalService.dismissAll();  
+        this.modalService.dismissAll();
+        this.loadSignatures();
       },
       error: (err) => console.error('Erro ao adicionar assinatura', err)
     });
@@ -99,6 +100,8 @@ export class CardComponent implements OnInit {
     this.dataCardService.editSignature(id, updateSignature).subscribe(
       response => {
         console.log('Assinatura editada com sucesso', response);
+        this.modalService.dismissAll();
+        this.loadSignatures();
       },
       error => {
         console.log('Erro ao editar assinatura', error)
