@@ -109,6 +109,22 @@ export class CardComponent implements OnInit {
     )
   }
 
+  deleteSignature(signature: any): void{
+
+    const id = signature.id;
+
+    this.dataCardService.deleteSignature(id).subscribe({
+      next: () =>{
+        this.signatures = this.signatures.filter(sig => sig.id !== id);
+        console.log('Assinatura removida com sucesso');
+      },
+
+      error: (error) =>{
+        console.error('Erro ao remover assinatura', error);
+      }
+      })
+  }
+
   resetselectedSignature(): void {
     this.selectedSignature = { name: '', category: '', price: 0, billingDate: '', signatureImageCode: '' };
   }
