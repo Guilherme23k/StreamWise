@@ -110,7 +110,8 @@ export class CardComponent implements OnInit {
   }
 
   deleteSignature(signature: any): void{
-    const id = this.selectedSignature.id;
+
+    const id = signature.id;
 
     this.dataCardService.deleteSignature(id).subscribe({
       next: () =>{
