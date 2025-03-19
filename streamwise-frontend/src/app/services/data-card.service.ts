@@ -29,5 +29,9 @@ export class DataCardService {
     return this.http.put(this.apiUrl + `/${id}`, signatureData);
   }
 
+  deleteSignature(id: number): void{
+    this.http.delete(this.apiUrl + `/${id}`);
+  }
+
 
 }
