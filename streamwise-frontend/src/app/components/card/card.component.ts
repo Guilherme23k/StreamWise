@@ -154,4 +154,8 @@ export class CardComponent implements OnInit {
     }
   }
 
+  get isScrollable(): boolean{
+    return this.signatures.length > 2;
+  }
+
 }
