@@ -1,7 +1,7 @@
 
 
 <div>
-    <div class="container">
+    <div [ngClass]="{'container': true, 'scrollable': isScrollable}">
         <ul [ngClass]="getGridClass()">
             <li *ngFor="let signature of signatures">
                 <div class="card">
