@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="Alteracoes gerais, remocao de classe propria para conversao e passado direto para o controller onde refatora a entrada de dados para o ENUM ser lido corretamente" />
+    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="feat: Adiciona a variavel de ambiente do jwt">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/security/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/security/JwtUtil.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -273,6 +277,7 @@
       <workItem from="1741386101360" duration="6888000" />
       <workItem from="1741642609864" duration="1990000" />
       <workItem from="1741816730754" duration="8845000" />
+      <workItem from="1742511507257" duration="1631000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Adicionando Dockerfile para melhorar odesenvolvimento do projeto">
       <option name="closed" value="true" />
@@ -634,15 +639,29 @@
       <option name="project" value="LOCAL" />
       <updated>1741824857691</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="refactor: Altera variaveis hardcoded em variaveis de ambiente">
+      <option name="closed" value="true" />
+      <created>1742511797906</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1742511797906</updated>
+    </task>
+    <task id="LOCAL-00047" summary="feat: Adiciona a variavel de ambiente do jwt">
+      <option name="closed" value="true" />
+      <created>1742512570999</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1742512570999</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: Implementa conteudo do enum SignatureImage" />
-    <MESSAGE value="feat: Adiciona enum image name a entidade Signature" />
     <MESSAGE value="feat: Implementa o signatureImage no DTO como uma string" />
     <MESSAGE value="feat: Implementa o signatureImage no convertToDto no SignatureServiceImpl" />
     <MESSAGE value="feat: Implementa novo metodo para converter DTO em uma entidade Signature" />
@@ -666,6 +685,8 @@
     <MESSAGE value="feat: Adiciona classe responsavel pela conversao da entrada do JSON" />
     <MESSAGE value="feat: Adiciona metodo que chama classe que fara a conversao do JSON de entrada" />
     <MESSAGE value="Alteracoes gerais, remocao de classe propria para conversao e passado direto para o controller onde refatora a entrada de dados para o ENUM ser lido corretamente" />
-    <option name="LAST_COMMIT_MESSAGE" value="Alteracoes gerais, remocao de classe propria para conversao e passado direto para o controller onde refatora a entrada de dados para o ENUM ser lido corretamente" />
+    <MESSAGE value="refactor: Altera variaveis hardcoded em variaveis de ambiente" />
+    <MESSAGE value="feat: Adiciona a variavel de ambiente do jwt" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Adiciona a variavel de ambiente do jwt" />
   </component>
 </project>
