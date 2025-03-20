@@ -34,14 +34,10 @@ ul {
 
 // 3 itens → 2 em cima e 1 centralizado abaixo
 .grid-three {
+    margin-top: 2rem;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto auto;
 
-    li:nth-child(3) {
-        grid-column: span 2;
-        justify-self: center;
-        width: 50%;
-    }
 }
 
 // 4 itens → Grade 2x2
@@ -59,7 +55,7 @@ li {
     display: flex;
     align-items: center;
     padding: 8px;
-    width: 100%;
+    width: 15rem;
     max-width: 300px;
     border: 1px solid #ddd;
     border-radius: 10px;
