@@ -2,6 +2,10 @@
     <div class="container-fluid">
         <button class="btn me-2" (click)="toggleMenu()"><i class="bi bi-list"></i></button>
         <span class="navbar-brand mx-auto">SteamWise</span>
+        <span class="navbar-brand">
+            <button (click)="logout()">Logout</button>
+        </span>
+
     </div>
 </nav>
 
@@ -17,5 +21,5 @@
 
 <section>
     <app-card></app-card>
-    <button (click)="logout()">Logout</button>
+    
 </section>
