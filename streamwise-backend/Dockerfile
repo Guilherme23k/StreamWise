@@ -10,9 +10,9 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Copiando o arquivo build.gradle ou gradle-wrapper
-COPY gradle /app/gradle
-COPY build.gradle /app/
-COPY settings.gradle /app/
+COPY streamwise-backend/gradle /app/gradle
+COPY streamwise-backend/build.gradle /app/
+COPY streamwise-backend/settings.gradle /app/
 
 # Copiando o código do projeto
 COPY streamwise-backend/src /app/src
