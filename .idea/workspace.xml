@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="feat: Adiciona a variavel de ambiente do jwt">
+    <list default="true" id="cdc0b433-f18d-40de-a7d5-3892d2aca030" name="Changes" comment="refacor: Atualiza o jwtUtil para comportar a chave secreta do jwt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/security/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/streamwise-backend/src/main/java/com/streamwise/security/JwtUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,7 +275,7 @@
       <workItem from="1741386101360" duration="6888000" />
       <workItem from="1741642609864" duration="1990000" />
       <workItem from="1741816730754" duration="8845000" />
-      <workItem from="1742511507257" duration="1631000" />
+      <workItem from="1742511507257" duration="3189000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Adicionando Dockerfile para melhorar odesenvolvimento do projeto">
       <option name="closed" value="true" />
@@ -655,14 +653,21 @@
       <option name="project" value="LOCAL" />
       <updated>1742512570999</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="refacor: Atualiza o jwtUtil para comportar a chave secreta do jwt">
+      <option name="closed" value="true" />
+      <created>1742513235125</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1742513235125</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: Implementa o signatureImage no DTO como uma string" />
     <MESSAGE value="feat: Implementa o signatureImage no convertToDto no SignatureServiceImpl" />
     <MESSAGE value="feat: Implementa novo metodo para converter DTO em uma entidade Signature" />
     <MESSAGE value="feat: Implementa constructor" />
@@ -687,6 +692,7 @@
     <MESSAGE value="Alteracoes gerais, remocao de classe propria para conversao e passado direto para o controller onde refatora a entrada de dados para o ENUM ser lido corretamente" />
     <MESSAGE value="refactor: Altera variaveis hardcoded em variaveis de ambiente" />
     <MESSAGE value="feat: Adiciona a variavel de ambiente do jwt" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Adiciona a variavel de ambiente do jwt" />
+    <MESSAGE value="refacor: Atualiza o jwtUtil para comportar a chave secreta do jwt" />
+    <option name="LAST_COMMIT_MESSAGE" value="refacor: Atualiza o jwtUtil para comportar a chave secreta do jwt" />
   </component>
 </project>
