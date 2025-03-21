@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class DataCardService {
 
-  private apiUrlGET = 'http://localhost:8080/signatures/user/me/signatures';
-  private apiUrl = 'http://localhost:8080/signatures';
+  private apiUrlGET = 'https://streamwise-kryk.onrender.com/signatures/user/me/signatures';
+  private apiUrl = 'https://streamwise-kryk.onrender.com/signatures';
 
   constructor(private http: HttpClient) { }
 
