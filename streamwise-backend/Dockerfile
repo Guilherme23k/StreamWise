@@ -15,7 +15,7 @@ COPY build.gradle /app/
 COPY settings.gradle /app/
 
 # Copiando o código do projeto
-COPY streamwise-backend/src /app/src
+COPY src /app/src
 
 # Baixando e instalando o Gradle
 RUN wget https://services.gradle.org/distributions/gradle-8.10.2-bin.zip && \
