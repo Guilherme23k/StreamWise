@@ -23,7 +23,7 @@ RUN wget https://services.gradle.org/distributions/gradle-8.10.2-bin.zip && \
     ln -s /opt/gradle-8.10.2/bin/gradle /usr/bin/gradle
 
 # Comando para rodar o build
-RUN gradle build -x test
+RUN ./gradlew build -x test --stacktrace
 
 # Usando uma imagem base para o ambiente de execução (JDK 17)
 FROM openjdk:17-jdk-slim
