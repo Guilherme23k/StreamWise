@@ -22,6 +22,8 @@ RUN wget https://services.gradle.org/distributions/gradle-8.10.2-bin.zip && \
     unzip gradle-8.10.2-bin.zip -d /opt && \
     ln -s /opt/gradle-8.10.2/bin/gradle /usr/bin/gradle
 
+RUN chmod +x gradlew
+
 # Comando para rodar o build
 RUN ./gradlew build -x test
 
