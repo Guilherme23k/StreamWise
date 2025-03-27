@@ -9,7 +9,7 @@ RUN apt-get update && \
     apt-get install -y wget unzip && \
     rm -rf /var/lib/apt/lists/*
 
-# Copiando o arquivo build.gradle ou gradle-wrapper
+# Copiando os arquivos necessários do Gradle
 COPY gradle /app/gradle
 COPY build.gradle /app/
 COPY settings.gradle /app/
@@ -17,12 +17,17 @@ COPY settings.gradle /app/
 # Copiando o código do projeto
 COPY src /app/src
 
-# Baixando e instalando o Gradle
+# Copiando o Gradle Wrapper (gradlew e gradle-wrapper.properties)
+COPY gradlew /app/
+COPY gradle-wrapper.properties /app/gradle/wrapper/
+
+# Garantindo que o gradlew tenha permissão de execução
+RUN chmod +x gradlew
+
+# Baixando e instalando o Gradle (se preferir usar uma versão global)
 RUN wget https://services.gradle.org/distributions/gradle-8.10.2-bin.zip && \
     unzip gradle-8.10.2-bin.zip -d /opt && \
     ln -s /opt/gradle-8.10.2/bin/gradle /usr/bin/gradle
-
-RUN chmod +x gradlew
 
 # Comando para rodar o build
 RUN ./gradlew build -x test
