@@ -33,6 +33,7 @@ export class LoginComponent {
   }
 
   submit(){
+    console.log('Enviando requisição de login...');
     this.userResponseService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe({
       next: () => {
         this.router.navigate(['/home']);
