@@ -7,8 +7,13 @@ import { Observable } from 'rxjs';
 })
 export class DataCardService {
 
+<<<<<<< HEAD
   private apiUrlGET = 'https://streamwise-production.up.railway.app/signatures/user/me/signatures';
   private apiUrl = 'https://streamwise-production.up.railway.app/signatures';
+=======
+  private readonly apiUrlGET = 'https://streamwise-production.up.railway.app/signatures/user/me/signatures';
+  private readonly apiUrl = 'https://streamwise-production.up.railway.app/signatures';
+>>>>>>> c159579a24bcbfcd41b245b9d1373f35ddb47260
 
   constructor(private http: HttpClient) { }
 
