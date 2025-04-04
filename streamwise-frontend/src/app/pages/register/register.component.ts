@@ -37,7 +37,7 @@ export class RegisterComponent {
   submit(){
     this.userResponse.register(this.registerForm.value.name, this.registerForm.value.email, this.registerForm.value.password).subscribe({
       next: () => {
-        this.toastr.success('Bem vindo!', 'Login efetuado com sucesso');
+        this.toastr.success('Sucesso!', 'Registro efetuado com sucesso');
       },
       error: () => {
         this.toastr.error('Não foi possível concluir o registro', 'Erro');
