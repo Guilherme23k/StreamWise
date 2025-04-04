@@ -4,6 +4,7 @@ import { InputBoxComponent } from "../../components/input-box/input-box.componen
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserResponseService } from '../../services/user-response.service';
+import { ToastrService } from 'ngx-toastr';
 
 interface registerForm {
   name: FormControl,
@@ -23,7 +24,7 @@ export class RegisterComponent {
 
   registerForm!: FormGroup<registerForm>;
 
-  constructor(private userResponse: UserResponseService, private router: Router){
+  constructor(private userResponse: UserResponseService, private router: Router, private toastr: ToastrService){
 
     this.registerForm = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -35,8 +36,13 @@ export class RegisterComponent {
 
   submit(){
     this.userResponse.register(this.registerForm.value.name, this.registerForm.value.email, this.registerForm.value.password).subscribe({
-      next: () => console.log('sucesso'),
-      error: () => console.log('error')
+      next: () => {
+        this.toastr.success('Sucesso!', 'Registro efetuado com sucesso');
+      },
+      error: () => {
+        this.toastr.error('Não foi possível concluir o registro', 'Erro');
+        console.log('error');
+      }
     })
   }
 
