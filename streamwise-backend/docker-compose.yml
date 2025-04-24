@@ -8,11 +8,12 @@ services:
       - "8080:8080"
     depends_on:
       - db
+    env_file:
+      - .env
     environment:
-      SPRING_PROFILES_ACTIVE: dev
+      SPRING_PROFILES_ACTIVE: prod
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/streamwise_db
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: postgres
+
     networks:
       - streamwise-network
 
