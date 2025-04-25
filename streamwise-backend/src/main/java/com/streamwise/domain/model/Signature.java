@@ -21,6 +21,22 @@ public class Signature {
 
     private int monthDuration;
 
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public int getMonthDuration() {
+        return monthDuration;
+    }
+
+    public void setMonthDuration(int monthDuration) {
+        this.monthDuration = monthDuration;
+    }
+
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
