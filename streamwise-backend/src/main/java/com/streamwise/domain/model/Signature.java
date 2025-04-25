@@ -13,6 +13,8 @@ public class Signature {
     private Long id;
 
     private String name;
+
+    private boolean active;
     private String category;
     private BigDecimal price;
     private LocalDate billingDate;
