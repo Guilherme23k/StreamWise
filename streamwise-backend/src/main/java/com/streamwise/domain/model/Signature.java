@@ -19,7 +19,7 @@ public class Signature {
     private BigDecimal price;
     private LocalDate billingDate;
 
-    private LocalDate monthDuration;
+    private int monthDuration;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
