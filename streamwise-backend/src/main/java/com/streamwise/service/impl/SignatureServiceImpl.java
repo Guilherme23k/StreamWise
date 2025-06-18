@@ -71,6 +71,7 @@ public class SignatureServiceImpl implements SignatureService {
         return new SignatureDTO(
                 signature.getId(),
                 signature.getName(),
+                signature.isActive(),
                 signature.getCategory(),
                 signature.getPrice(),
                 signature.getBillingDate(),
