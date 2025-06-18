@@ -8,6 +8,8 @@ import java.time.LocalDate;
 
 public record SignatureDTO(Long id,
                            String name,
+
+                           Boolean active,
                            String category,
                            BigDecimal price,
                            LocalDate billingDate,
@@ -20,6 +22,7 @@ public record SignatureDTO(Long id,
         return new SignatureDTO(
                 signature.getId(),
                 signature.getName(),
+                signature.isActive(),
                 signature.getCategory(),
                 signature.getPrice(),
                 signature.getBillingDate(),
