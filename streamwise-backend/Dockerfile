@@ -32,4 +32,5 @@ WORKDIR /app
 COPY --from=build /app/build/libs /app
 
 # Definindo o comando para rodar a aplicação
-CMD ["java", "-Dspring.profiles.active=prod", "-jar", "/app/StreamWise-0.0.1-SNAPSHOT.jar"]
+#TROCAR O .ACTIVE=DEV PRA PROD QUANDO QUISER USAR TAL PERFIL
+CMD ["java", "-Dspring.profiles.active=dev", "-jar", "/app/StreamWise-0.0.1-SNAPSHOT.jar"]
