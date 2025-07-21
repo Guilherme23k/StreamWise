@@ -1,6 +1,7 @@
 package com.streamwise.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.streamwise.controller.dto.RegisterResponseDTO;
 import com.streamwise.controller.dto.UserLoginDTO;
 import com.streamwise.controller.dto.UserRegisterDTO;
 import com.streamwise.domain.model.User;
@@ -32,9 +33,9 @@ public class AuthController {
     @Autowired
     private UserService userService;
     @PostMapping("/register")
-    public ResponseEntity<User> register(@RequestBody UserRegisterDTO userRegisterDTO){
+    public ResponseEntity<RegisterResponseDTO> register(@RequestBody UserRegisterDTO userRegisterDTO){
         User user = userService.register(userRegisterDTO);
-        return ResponseEntity.status(HttpStatus.CREATED).body(user);
+        return ResponseEntity.status(HttpStatus.CREATED).body(RegisterResponseDTO.fromUser(user));
     }
 
     @PostMapping("/login")
