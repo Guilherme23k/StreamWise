@@ -19,6 +19,7 @@ export class CardComponent implements OnInit {
   selectedSignature: any = {
   name: '',
   category: '',
+  active: true,
   price: 0,
   billingDate: '',
   signatureImageCode: ''
