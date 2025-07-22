@@ -93,6 +93,8 @@ public class SignatureController {
                 signatureImage
         );
 
+        signatureToCreate.setActive(signatureDTO.active() != null ? signatureDTO.active() : true);
+
 
         Signature signatureCreated = signatureService.create(signatureToCreate, loggedUser);
 
