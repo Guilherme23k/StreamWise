@@ -91,6 +91,11 @@ li {
         align-items: center;
     }
 
+    .card-active{
+        color: green;
+        font-weight: 600;
+    }
+
     .card-title {
         margin: 0.35rem 0 0 0;
         font-size: 1.5rem;
