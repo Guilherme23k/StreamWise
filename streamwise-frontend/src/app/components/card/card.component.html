@@ -7,19 +7,19 @@
                 <div class="card">
                     
                     <img class="card-img-top" [src]="signature.imageUrl" alt="Imagem da categoria">
-                    
+                     
                     <p class="card-active">Status: {{ signature.active }}</p>
-                    
+
                     <h4 class="card-title">{{ signature.name }}</h4>
+                    <p class="billing-date">
+                        <i class="bi bi-calendar-event"></i> Todo dia {{ getBillingDay(signature.billingDate) }}
+                    </p>
                     <div class="card-body">
                         <span class="badge">{{ signature.category }}</span>
 
             
                         <p class="price">R$ {{ signature.price }}</p>
             
-                        <p class="billing-date">
-                            <i class="bi bi-calendar-event"></i> Todo dia {{ getBillingDay(signature.billingDate) }}
-                        </p>
 
                         <i class="bi bi-pencil-square" (click)="openEditModal(content, signature)"></i>
                         <i class="bi bi-x-circle" (click)="deleteSignature(signature)"></i>
