@@ -20,7 +20,9 @@
                          Cobrança todo dia {{ getBillingDay(signature.billingDate) }}
                     </p>
                     <div class="card-body">
-                        <span class="badge">{{ signature.category }}</span>
+                        <span class="badge">
+                            <i class="bi bi-display"></i>    {{ signature.category }}
+                        </span>
 
             
                         <p class="price">R$ {{ signature.price }}</p>
