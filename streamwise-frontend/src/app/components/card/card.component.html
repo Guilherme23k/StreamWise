@@ -8,7 +8,12 @@
                     
                     <img class="card-img-top" [src]="signature.imageUrl" alt="Imagem da categoria">
                      
-                    <p class="card-active">Status: {{ signature.active }}</p>
+                    <p *ngIf="signature.active; else inactivetemplate" class="card-active">Status: Ativo </p>
+
+                    <ng-template #inactivetemplate>
+                        <p class="card-active">Status: Inativo </p>
+                    </ng-template>
+
 
                     <h4 class="card-title">{{ signature.name }}</h4>
                     <p class="billing-date">
