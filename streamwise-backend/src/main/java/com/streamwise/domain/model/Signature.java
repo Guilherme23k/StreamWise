@@ -52,7 +52,7 @@ public class Signature {
         return imageName != null ? imageName.name() : null;
     }
 
-    public Signature(Long id, String name, String category, BigDecimal price, LocalDate billingDate, User user, SignatureImage imageName) {
+    public Signature(Long id, String name, String category, BigDecimal price, LocalDate billingDate, User user, SignatureImage imageName, int monthDuration) {
         this.id = id;
         this.name = name;
         this.category = category;
@@ -60,6 +60,7 @@ public class Signature {
         this.billingDate = billingDate;
         this.user = user;
         this.imageName = imageName;
+        this.monthDuration = monthDuration;
     }
 
     public Signature() {
