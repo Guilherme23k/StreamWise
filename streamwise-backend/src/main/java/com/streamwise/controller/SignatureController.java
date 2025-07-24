@@ -90,7 +90,8 @@ public class SignatureController {
                 signatureDTO.price(),
                 signatureDTO.billingDate(),
                 loggedUser,
-                signatureImage
+                signatureImage,
+                signatureDTO.monthDuration()
         );
 
         signatureToCreate.setActive(signatureDTO.active() != null ? signatureDTO.active() : true);
