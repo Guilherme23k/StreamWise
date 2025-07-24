@@ -13,6 +13,8 @@ public record SignatureDTO(Long id,
                            String category,
                            BigDecimal price,
                            LocalDate billingDate,
+
+                           int monthDuration,
                            String signatureImageCode,
                            String signatureImageName,
                            String imageUrl) {
@@ -26,6 +28,7 @@ public record SignatureDTO(Long id,
                 signature.getCategory(),
                 signature.getPrice(),
                 signature.getBillingDate(),
+                signature.getMonthDuration(),
                 signature.getImageCode(),
                 signature.getImageDisplayName(),
                 imageUrl
