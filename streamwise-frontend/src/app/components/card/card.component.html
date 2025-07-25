@@ -74,7 +74,14 @@
                 <label for="billingDay" class="form-label">Dia de Cobrança</label>
                 <select id="billingDay" class="form-control" [(ngModel)]="selectedSignature.billingDay" name="billingDay" required>
                     <option *ngFor="let day of daysOfMonth" [value]="day">{{ day }}</option>
-                </select>      </div>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="billingMonth" class="form-label">Duração da cobrança</label>
+                <select id="billingMonth" class="form-control" [(ngModel)]="selectedSignature.billingMonth" name="billingMonth" required>
+                    <option *ngFor="let month of monthsOfYear" [value]="month">{{ month }}</option>
+                </select>
+            </div>
 
             <div class="mb-3">
                 <label for="signatureImageCode" class="form-label">Escolha uma Imagem</label>
