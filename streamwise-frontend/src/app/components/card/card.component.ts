@@ -16,11 +16,13 @@ export class CardComponent implements OnInit {
   signatures: any[] = [];
   loading = true;
   error = false;
+  
   selectedSignature: any = {
   name: '',
   category: '',
   active: true,
   price: 0,
+  monthDuration: 0,
   billingDate: '',
   signatureImageCode: ''
 };
