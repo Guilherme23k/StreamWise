@@ -16,7 +16,7 @@ export class CardComponent implements OnInit {
   signatures: any[] = [];
   loading = true;
   error = false;
-  
+
   selectedSignature: any = {
   name: '',
   category: '',
@@ -40,6 +40,9 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
     this.loadSignatures();
   }
+
+  daysOfMonth: number[] = Array.from({ length: 31 }, (_, i) => i + 1);
+
 
   getImageUrl(signatureName: string): string {
   const selectedSignature = this.availableSignatures.find(s => s.name === signatureName);
