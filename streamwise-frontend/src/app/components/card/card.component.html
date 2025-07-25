@@ -71,10 +71,11 @@
                     required>
             </div>
             <div class="mb-3">
-                <label for="billingDate" class="form-label">Data de Cobrança</label>
-                <input type="date" id="billingDate" class="form-control" [(ngModel)]="selectedSignature.billingDate"
-                    name="billingDate" required>
-            </div>
+                <label for="billingDay" class="form-label">Dia de Cobrança</label>
+                <select id="billingDay" class="form-control" [(ngModel)]="selectedSignature.billingDay" name="billingDay" required>
+                    <option *ngFor="let day of daysOfMonth" [value]="day">{{ day }}</option>
+                </select>      </div>
+
             <div class="mb-3">
                 <label for="signatureImageCode" class="form-label">Escolha uma Imagem</label>
                 <select id="signatureImageCode" class="form-control" [(ngModel)]="selectedSignature.signatureImageCode"
