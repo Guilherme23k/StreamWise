@@ -42,6 +42,8 @@ export class CardComponent implements OnInit {
   }
 
   daysOfMonth: number[] = Array.from({ length: 31 }, (_, i) => i + 1);
+  monthsOfYear: number[] = Array.from({ length: 12 }, (_, i) => i + 1);
+
 
 
   getImageUrl(signatureName: string): string {
