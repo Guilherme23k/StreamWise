@@ -40,9 +40,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
                 signature.getPrice(),
                 signature.getBillingDate(),
                 signature.getMonthDuration(),
-                signature.getImageDisplayName(),
-                signature.getImageCode(),
-                signature.getImageUrl()
+                signature.getImageDisplayName()
         );
     }
 
