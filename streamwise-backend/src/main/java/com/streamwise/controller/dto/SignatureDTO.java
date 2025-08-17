@@ -15,9 +15,7 @@ public record SignatureDTO(Long id,
                            LocalDate billingDate,
 
                            int monthDuration,
-                           String signatureImageCode,
-                           String signatureImageName,
-                           String imageUrl) {
+                           String signatureImageCode) {
 
     public static SignatureDTO fromEntity(Signature signature) {
         String imageUrl = signature.getImageName() != null ? signature.getImageName().getUrl() : null;
@@ -29,9 +27,7 @@ public record SignatureDTO(Long id,
                 signature.getPrice(),
                 signature.getBillingDate(),
                 signature.getMonthDuration(),
-                signature.getImageCode(),
-                signature.getImageDisplayName(),
-                imageUrl
+                signature.getImageCode()
                 );
     }
 
