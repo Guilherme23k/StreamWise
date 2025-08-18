@@ -72,6 +72,10 @@ export class CardComponent implements OnInit {
     this.modalService.open(content);
   }
 
+  openChoiceModal(content: any): void {
+    this.modalService.open(content);
+  }
+
   openEditModal(content: any, signature: any):void{
     this.isEditMode = true;
     this.selectedSignature = { ...signature };
