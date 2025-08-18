@@ -187,3 +187,38 @@ li {
     font-size: 24px;
     cursor: pointer;
 }
+
+.choiceBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 400px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        gap: 1rem;
+
+        .button-box{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            button{
+                width: 150px;
+                height: 200px;
+            }
+        }
+}
+
+::ng-deep {
+    ngb-modal-window.modal-centralizado {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    ngb-modal-window.modal-centralizado .modal-dialog {
+        margin: 0 !important;
+    }
+}
