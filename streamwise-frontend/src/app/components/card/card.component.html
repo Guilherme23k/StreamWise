@@ -34,7 +34,7 @@
                 </div>
             </li>
             <li>
-                <div class="card add-card" (click)="openModal(content)">
+                <div class="card add-card" (click)="openChoiceModal(contentChoice)">
                     <div class="add-icon">+</div>
                 </div>
             </li>
@@ -45,6 +45,18 @@
         <p>Você não possui nenhuma assinatura.</p>
     </ng-template>
 </div>
+
+<ng-template #contentChoice>
+        <div class="choiceBox">
+            <div class="button-box">
+                <button>STREAMINGS</button>
+            </div>
+
+            <div class="button-box">
+            <button>SERVIÇOS</button>
+            </div>
+        </div>
+</ng-template>
 
 
 <ng-template #content let-modal>
