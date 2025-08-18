@@ -73,7 +73,9 @@ export class CardComponent implements OnInit {
   }
 
   openChoiceModal(content: any): void {
-    this.modalService.open(content);
+    this.modalService.open(content, {
+  windowClass: 'modal-centralizado'
+});
   }
 
   openEditModal(content: any, signature: any):void{
