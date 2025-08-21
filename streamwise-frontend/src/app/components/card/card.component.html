@@ -49,11 +49,18 @@
 <ng-template #contentChoice>
         <div class="choiceBox">
             <div class="button-box">
-                <button>STREAMINGS</button>
+                
+                <button (click)="openModal(content)" class="btn-one">
+                    <img src="assets/Streaming.svg">
+                    <p>STREAMING</p>
+                </button>
             </div>
 
             <div class="button-box">
-            <button>SERVIÇOS</button>
+            <button (click)="openModal(contentServico)" class="btn-two">
+                <img src="assets/Calendario.svg">
+                <p>SERVICOS</p>
+            </button>
             </div>
         </div>
 </ng-template>
@@ -62,7 +69,65 @@
 <ng-template #content let-modal>
     <div class="modal-header">
         <h5 class="modal-title">
-            {{ isEditMode ? 'Editar Assinatura' : 'Adicionar Assinatura' }}
+            {{ isEditMode ? 'Editar Assinatura' : 'Adicionar Streaming' }}
+        </h5>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+    </div>
+    <div class="modal-body">
+        <form #signatureForm="ngForm">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nome</label>
+                <input type="text" id="name" class="form-control" [(ngModel)]="selectedSignature.name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="category" class="form-label">Categoria</label>
+                <input type="text" id="category" class="form-control" [(ngModel)]="selectedSignature.category"
+                    name="category" required>
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Preço</label>
+                <input type="number" id="price" class="form-control" [(ngModel)]="selectedSignature.price" name="price"
+                    required>
+            </div>
+            <div class="mb-3">
+                <label for="billingDay" class="form-label">Dia de Cobrança</label>
+                <select id="billingDay" class="form-control" [(ngModel)]="selectedSignature.billingDay" name="billingDay" required>
+                    <option *ngFor="let day of daysOfMonth" [value]="day">{{ day }}</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="billingMonth" class="form-label">Duração da cobrança</label>
+                <select id="billingMonth" class="form-control" [(ngModel)]="selectedSignature.billingMonth" name="billingMonth" required>
+                    <option *ngFor="let month of monthsOfYear" [value]="month">{{ month }}</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="signatureImageCode" class="form-label">Escolha uma Imagem</label>
+                <select id="signatureImageCode" class="form-control" [(ngModel)]="selectedSignature.signatureImageCode"
+                    name="signatureImageCode" required>
+                    <option *ngFor="let signature of availableSignatures" [value]="signature.name">
+                        {{ signature.name }}
+                    </option>
+                </select>
+            </div>
+
+            <div *ngIf="selectedSignature.signatureImageCode">
+                <img [src]="getImageUrl(selectedSignature.signatureImageCode)" alt="Prévia da Imagem" width="100">
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="isEditMode ? editSignature() : addSignature()">
+            {{ isEditMode ? 'Salvar Alterações' : 'Adicionar Assinatura' }}
+        </button>
+    </div>
+</ng-template>
+<ng-template #contentServico let-modal>
+    <div class="modal-header">
+        <h5 class="modal-title">
+            {{ isEditMode ? 'Editar Assinatura' : 'Adicionar Servico' }}
         </h5>
         <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
     </div>
