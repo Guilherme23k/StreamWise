@@ -31,7 +31,11 @@ export class CardComponent implements OnInit {
 
   availableSignatures = [
     { name: 'Netflix', url: 'https://img.icons8.com/?size=100&id=20519&format=png&color=000000' },
-    { name: 'Prime Video', url: 'https://img.icons8.com/?size=100&id=Rs68BrhxH0XZ&format=png&color=000000' }
+    { name: 'Prime Video', url: 'https://img.icons8.com/?size=100&id=Rs68BrhxH0XZ&format=png&color=000000' },
+    { name: 'Disney Plus', url: 'https://img.icons8.com/?size=100&id=PIBuqGDN2nPm&format=png&color=000000' },
+    { name: 'HBO Max', url: 'https://img.icons8.com/?size=100&id=9tVdlpWe1F9k&format=png&color=000000' },
+    { name: 'Paramont', url: 'https://img.icons8.com/?size=100&id=Ggt3oh6aoRWh&format=png&color=000000' },
+    { name: 'Globoplay', url: 'https://img.icons8.com/?size=100&id=cdS20W1QGgDD&format=png&color=000000' }
   ];
 
 
