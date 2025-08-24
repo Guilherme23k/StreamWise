@@ -76,10 +76,8 @@ public class SignatureServiceImpl implements SignatureService {
                 signature.getPrice(),
                 signature.getBillingDate(),
                 signature.getMonthDuration(),
-                signature.getImageCode(),
-                signature.getImageDisplayName(),
-                signature.getImageUrl()
-        );
+                signature.getImageCode()
+                );
     }
 
     @Override
