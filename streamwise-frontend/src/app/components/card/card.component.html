@@ -73,8 +73,28 @@
         </h5>
         <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
     </div>
+
     <div class="modal-body">
-        <form #signatureForm="ngForm">
+
+        <ul>
+            <li *ngFor="let signature of signaturesList">
+
+                <div class="card-list">
+                
+                    <div class="streaming-card">
+                        <img [src]="signature.image" alt="">
+                        <p>{{signature.name}}</p>
+                    </div>
+                
+                </div>
+
+            </li>
+        </ul>
+
+        
+
+        
+        <!-- <form #signatureForm="ngForm">
             <div class="mb-3">
                 <label for="name" class="form-label">Nome</label>
                 <input type="text" id="name" class="form-control" [(ngModel)]="selectedSignature.name" name="name" required>
@@ -115,7 +135,7 @@
             <div *ngIf="selectedSignature.signatureImageCode">
                 <img [src]="getImageUrl(selectedSignature.signatureImageCode)" alt="Prévia da Imagem" width="100">
             </div>
-        </form>
+        </form> -->
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Cancelar</button>
@@ -160,7 +180,7 @@
                 </select>
             </div>
 
-            <div class="mb-3">
+            <!-- <div class="mb-3">
                 <label for="signatureImageCode" class="form-label">Escolha uma Imagem</label>
                 <select id="signatureImageCode" class="form-control" [(ngModel)]="selectedSignature.signatureImageCode"
                     name="signatureImageCode" required>
@@ -172,7 +192,7 @@
 
             <div *ngIf="selectedSignature.signatureImageCode">
                 <img [src]="getImageUrl(selectedSignature.signatureImageCode)" alt="Prévia da Imagem" width="100">
-            </div>
+            </div> -->
         </form>
     </div>
     <div class="modal-footer">
