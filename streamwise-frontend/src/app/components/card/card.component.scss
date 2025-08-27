@@ -230,6 +230,9 @@ li {
 
         }
 }
+.modal-forms{
+    display: none;
+}
 
 .modal-body{
 
@@ -243,14 +246,22 @@ li {
         margin: 0.25rem;
         
     }
+
     
     button {
         text-decoration: none;
         background: none;
         border: 1px solid black;
         
+
+            &:focus,
+            &:active {
+            
+                background: blue;
+            
+            }
     }
-    
+
     ul{
         text-align: center;
         padding: 0;
