@@ -81,7 +81,7 @@
 
                 <div class="card-list">
                 
-                    <button>
+                    <button (click)="showSignatureForms(signature)">
                     <div class="streaming-card">
                         <img [src]="signature.image" alt="">
                         <p>{{signature.name}}</p>
@@ -138,6 +138,22 @@
             </div>
         </form> -->
     </div>
+
+    <div class="modal-forms">
+        <label for="number">Valor:</label>
+        <input type="number" class="form-control" [(ngModel)]="selectedSignature.price">
+        
+        <br>
+
+        <label for="number">Dia da cobrança:</label>
+        <input type="date" id="price">
+
+        <br>
+
+        <label for="number">Duração da assinatura:</label>
+        <input type="date" id="price">
+    </div>
+
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Cancelar</button>
         <button type="button" class="btn btn-primary" (click)="isEditMode ? editSignature() : addSignature()">

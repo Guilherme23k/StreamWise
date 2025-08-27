@@ -4,6 +4,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { STREAMINGS } from '../../types/streamingList';
+import { Streaming } from '../../interface/Streaming';
 
 @Component({
   selector: 'app-card',
@@ -168,6 +169,15 @@ export class CardComponent implements OnInit {
 
   get isScrollable(): boolean{
     return this.signatures.length > 2;
+  }
+
+  showSignatureForms(signature: Streaming): void {
+
+    this.selectedSignature = signature;
+
+    document.querySelector('.modal-forms')!.setAttribute('style', 'display: block;');
+
+    console.log(this.selectedSignature.name)
   }
 
 }
