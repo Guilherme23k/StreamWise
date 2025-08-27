@@ -233,14 +233,26 @@ li {
 
 .modal-body{
 
-    .streaming-card{
+    display: flex;
+    justify-content: center;
+    
+    .card-list{
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin: 0.25rem;
+        
     }
-
+    
+    button {
+        text-decoration: none;
+        background: none;
+        border: 1px solid black;
+        
+    }
+    
     ul{
-        margin: 0;
+        text-align: center;
         padding: 0;
         overflow: hidden;
 
