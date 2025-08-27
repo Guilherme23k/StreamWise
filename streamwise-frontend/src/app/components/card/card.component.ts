@@ -3,6 +3,7 @@ import { DataCardService } from '../../services/data-card.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { STREAMINGS } from '../../types/streamingList';
 
 @Component({
   selector: 'app-card',
@@ -29,14 +30,7 @@ export class CardComponent implements OnInit {
   isEditMode = false;
 
 
-  availableSignatures = [
-    { name: 'Netflix', url: 'https://img.icons8.com/?size=100&id=20519&format=png&color=000000' },
-    { name: 'Prime Video', url: 'https://img.icons8.com/?size=100&id=Rs68BrhxH0XZ&format=png&color=000000' },
-    { name: 'Disney Plus', url: 'https://img.icons8.com/?size=100&id=PIBuqGDN2nPm&format=png&color=000000' },
-    { name: 'HBO Max', url: 'https://img.icons8.com/?size=100&id=9tVdlpWe1F9k&format=png&color=000000' },
-    { name: 'Paramont', url: 'https://img.icons8.com/?size=100&id=Ggt3oh6aoRWh&format=png&color=000000' },
-    { name: 'Globoplay', url: 'https://img.icons8.com/?size=100&id=cdS20W1QGgDD&format=png&color=000000' }
-  ];
+  signaturesList = STREAMINGS;
 
 
   constructor(private dataCardService: DataCardService, private modalService: NgbModal) {}
@@ -50,10 +44,10 @@ export class CardComponent implements OnInit {
 
 
 
-  getImageUrl(signatureName: string): string {
-  const selectedSignature = this.availableSignatures.find(s => s.name === signatureName);
-  return selectedSignature ? selectedSignature.url : '';
-}
+//   getImageUrl(signatureName: string): string {
+//   const selectedSignature = this.availableSignatures.find(s => s.name === signatureName);
+//   return selectedSignature ? selectedSignature.url : '';
+// }
 
   
   loadSignatures(): void {
@@ -164,13 +158,13 @@ export class CardComponent implements OnInit {
   }
 
   
-  selectSignatureImageCode(signatureName: string): void {
+  // selectSignatureImageCode(signatureName: string): void {
     
-    const selectedSignature = this.availableSignatures.find(s => s.name === signatureName);
-    if (selectedSignature) {
-      this.selectedSignature.signatureImageCode = selectedSignature.name.toUpperCase();
-    }
-  }
+  //   const selectedSignature = this.availableSignatures.find(s => s.name === signatureName);
+  //   if (selectedSignature) {
+  //     this.selectedSignature.signatureImageCode = selectedSignature.name.toUpperCase();
+  //   }
+  // }
 
   get isScrollable(): boolean{
     return this.signatures.length > 2;
