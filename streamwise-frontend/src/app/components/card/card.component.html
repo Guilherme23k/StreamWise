@@ -6,7 +6,7 @@
             <li *ngFor="let signature of signatures">
                 <div class="card">
                     
-                    <img class="card-img-top" [src]="signature.imageUrl" alt="Imagem da categoria">
+                    <img class="card-img-top" [src]="getImageUrlFromCode(signature.signatureImageCode)" alt="Imagem da categoria">
                      
                     <p *ngIf="signature.active; else inactivetemplate" class="card-active">Status: Ativo </p>
 
@@ -83,7 +83,7 @@
                 
                     <button (click)="showSignatureForms(signature)">
                     <div class="streaming-card">
-                        <img [src]="signature.image" alt="">
+                        <img [src]="signature.image">
                         <p>{{signature.name}}</p>
                     </div>
                 </button>
@@ -91,67 +91,27 @@
 
             </li>
         </ul>
-
-        
-
-        
-        <!-- <form #signatureForm="ngForm">
-            <div class="mb-3">
-                <label for="name" class="form-label">Nome</label>
-                <input type="text" id="name" class="form-control" [(ngModel)]="selectedSignature.name" name="name" required>
-            </div>
-            <div class="mb-3">
-                <label for="category" class="form-label">Categoria</label>
-                <input type="text" id="category" class="form-control" [(ngModel)]="selectedSignature.category"
-                    name="category" required>
-            </div>
-            <div class="mb-3">
-                <label for="price" class="form-label">Preço</label>
-                <input type="number" id="price" class="form-control" [(ngModel)]="selectedSignature.price" name="price"
-                    required>
-            </div>
-            <div class="mb-3">
-                <label for="billingDay" class="form-label">Dia de Cobrança</label>
-                <select id="billingDay" class="form-control" [(ngModel)]="selectedSignature.billingDay" name="billingDay" required>
-                    <option *ngFor="let day of daysOfMonth" [value]="day">{{ day }}</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="billingMonth" class="form-label">Duração da cobrança</label>
-                <select id="billingMonth" class="form-control" [(ngModel)]="selectedSignature.billingMonth" name="billingMonth" required>
-                    <option *ngFor="let month of monthsOfYear" [value]="month">{{ month }}</option>
-                </select>
-            </div>
-
-            <div class="mb-3">
-                <label for="signatureImageCode" class="form-label">Escolha uma Imagem</label>
-                <select id="signatureImageCode" class="form-control" [(ngModel)]="selectedSignature.signatureImageCode"
-                    name="signatureImageCode" required>
-                    <option *ngFor="let signature of availableSignatures" [value]="signature.name">
-                        {{ signature.name }}
-                    </option>
-                </select>
-            </div>
-
-            <div *ngIf="selectedSignature.signatureImageCode">
-                <img [src]="getImageUrl(selectedSignature.signatureImageCode)" alt="Prévia da Imagem" width="100">
-            </div>
-        </form> -->
     </div>
 
     <div class="modal-forms">
-        <label for="number">Valor:</label>
-        <input type="number" class="form-control" [(ngModel)]="selectedSignature.price">
-        
-        <br>
 
-        <label for="number">Dia da cobrança:</label>
-        <input type="date" id="price">
-
-        <br>
-
-        <label for="number">Duração da assinatura:</label>
-        <input type="date" id="price">
+        <div class="mb-3">
+            <label for="price" class="form-label">Preço</label>
+            <input type="number" id="price" class="form-control" [(ngModel)]="selectedSignature.price" name="price" required>
+        </div>
+        <div class="mb-3">
+            <label for="billingDay" class="form-label">Dia de Cobrança</label>
+            <select id="billingDay" class="form-control" [(ngModel)]="selectedSignature.billingDay" name="billingDay" required>
+                <option *ngFor="let day of daysOfMonth" [value]="day">{{ day }}</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="billingMonth" class="form-label">Duração da cobrança (em meses)</label>
+            <select id="billingMonth" class="form-control" [(ngModel)]="selectedSignature.billingMonth" name="billingMonth"
+                required>
+                <option *ngFor="let month of monthsOfYear" [value]="month">{{ month }}</option>
+            </select>
+        </div>
     </div>
 
     <div class="modal-footer">
