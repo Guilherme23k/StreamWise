@@ -11,3 +11,20 @@ export const STREAMINGS: Streaming[] = [
     { name: 'Globoplay', image: 'https://img.icons8.com/?size=100&id=cdS20W1QGgDD&format=png&color=000000' }
 
 ]
+
+export const codeToName: Record<string, string> ={
+
+    NETFLIX: "Netflix",
+    PRIMEVIDEO: "Prime Video",
+    DISNEYPLUS: "Disney Plus",
+    HBOMAX: "HBO Max",
+    PARAMONT: "Paramont",
+    GLOBOPLAY: "Globoplay"
+
+};
+
+export function getStreamingByCode(code: string): Streaming | undefined {
+    const formattedName = codeToName[code];
+
+    return STREAMINGS.find(s => s.name === formattedName);
+}
