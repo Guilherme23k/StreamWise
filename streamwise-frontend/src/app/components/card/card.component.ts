@@ -3,7 +3,7 @@ import { DataCardService } from '../../services/data-card.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { STREAMINGS } from '../../types/streamingList';
+import { STREAMINGS, codeToName } from '../../types/streamingList';
 import { Streaming } from '../../interface/Streaming';
 
 @Component({
@@ -30,6 +30,9 @@ export class CardComponent implements OnInit {
 };
   isEditMode = false;
 
+  buttonSignatureNameSelected : String = '';
+  buttonSignatureImageSelected : String = '';
+
 
   signaturesList = STREAMINGS;
 
@@ -44,11 +47,13 @@ export class CardComponent implements OnInit {
   monthsOfYear: number[] = Array.from({ length: 12 }, (_, i) => i + 1);
 
 
+getImageUrlFromCode(code: string) : string{
 
-//   getImageUrl(signatureName: string): string {
-//   const selectedSignature = this.availableSignatures.find(s => s.name === signatureName);
-//   return selectedSignature ? selectedSignature.url : '';
-// }
+  const name = codeToName[code];
+  const streaming = STREAMINGS.find(s => s.name === name);
+  return streaming ? streaming.image : 'assets/default.png';
+
+}
 
   
   loadSignatures(): void {
@@ -85,8 +90,10 @@ export class CardComponent implements OnInit {
 
   addSignature(): void {
 
-    this.selectedSignature.signatureImageCode = this.selectedSignature.signatureImageCode.toUpperCase(); 
+    // this.selectedSignature.signatureImageCode = this.selectedSignature.signatureImageCode.toUpperCase(); 
 
+    this.selectedSignature.name = this.buttonSignatureNameSelected;
+    this.selectedSignature.signatureImageCode = this.buttonSignatureNameSelected;
 
     this.dataCardService.addSignature(this.selectedSignature).subscribe({
       next: (response) => {
@@ -98,6 +105,8 @@ export class CardComponent implements OnInit {
       },
       error: (err) => console.error('Erro ao adicionar assinatura', err)
     });
+
+    console.log(this.selectedSignature)
   }
 
   editSignature(): void{
@@ -177,7 +186,10 @@ export class CardComponent implements OnInit {
 
     document.querySelector('.modal-forms')!.setAttribute('style', 'display: block;');
 
-    console.log(this.selectedSignature.name)
+    this.buttonSignatureNameSelected = this.selectedSignature.name;
+    this.buttonSignatureImageSelected = this.selectedSignature.image;
+
+    this.selectedSignature.category = 'STREAMING'
   }
 
 }
