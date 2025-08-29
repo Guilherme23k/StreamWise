@@ -88,9 +88,7 @@ getImageUrlFromCode(code: string) : string{
     this.modalService.open(content);
   }
 
-  addSignature(): void {
-
-    // this.selectedSignature.signatureImageCode = this.selectedSignature.signatureImageCode.toUpperCase(); 
+  addSignature(): void { 
 
     this.selectedSignature.name = this.buttonSignatureNameSelected;
     this.selectedSignature.signatureImageCode = this.buttonSignatureNameSelected;
