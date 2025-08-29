@@ -25,7 +25,7 @@ export class CardComponent implements OnInit {
   active: true,
   price: 0,
   monthDuration: 0,
-  billingDate: '',
+  billingDate: 0,
   signatureImageCode: ''
 };
   isEditMode = false;
@@ -72,7 +72,7 @@ getImageUrlFromCode(code: string) : string{
  
   openModal(content: any): void {
     this.isEditMode = false;
-    this.selectedSignature = { name: '', category: '', price: 0, billingDate: '', signatureImageCode: '' };
+    this.selectedSignature = { name: '', category: '', price: 0, billingDate: 0, signatureImageCode: '' };
     this.modalService.open(content);
   }
 
@@ -88,7 +88,8 @@ getImageUrlFromCode(code: string) : string{
     this.modalService.open(content);
   }
 
-  addSignature(): void { 
+  addSignature(): void {
+ 
 
     this.selectedSignature.name = this.buttonSignatureNameSelected;
     this.selectedSignature.signatureImageCode = this.buttonSignatureNameSelected;
@@ -146,12 +147,12 @@ getImageUrlFromCode(code: string) : string{
   }
 
   resetselectedSignature(): void {
-    this.selectedSignature = { name: '', category: '', price: 0, billingDate: '', signatureImageCode: '' };
+    this.selectedSignature = { name: '', category: '', price: 0, billingDate: 0, signatureImageCode: '' };
   }
 
   
-  getBillingDay(dateStr: String): String {
-    return dateStr.split("-")[2];  
+  getBillingDay(billingDate: number): number {
+    return billingDate;  
   }
 
   
