@@ -100,8 +100,8 @@
             <input type="number" id="price" class="form-control" [(ngModel)]="selectedSignature.price" name="price" required>
         </div>
         <div class="mb-3">
-            <label for="billingDay" class="form-label">Dia de Cobrança</label>
-            <select id="billingDay" class="form-control" [(ngModel)]="selectedSignature.billingDay" name="billingDay" required>
+            <label for="billingDate" class="form-label">Dia de Cobrança</label>
+            <select id="billingDate" class="form-control" [(ngModel)]="selectedSignature.billingDate" name="billingDate" required>
                 <option *ngFor="let day of daysOfMonth" [value]="day">{{ day }}</option>
             </select>
         </div>
@@ -145,8 +145,8 @@
                     required>
             </div>
             <div class="mb-3">
-                <label for="billingDay" class="form-label">Dia de Cobrança</label>
-                <select id="billingDay" class="form-control" [(ngModel)]="selectedSignature.billingDay" name="billingDay" required>
+                <label for="billingDate" class="form-label">Dia de Cobrança</label>
+                <select id="billingDate" class="form-control" [(ngModel)]="selectedSignature.billingDate" name="billingDate" required>
                     <option *ngFor="let day of daysOfMonth" [value]="day">{{ day }}</option>
                 </select>
             </div>
