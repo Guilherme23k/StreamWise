@@ -65,9 +65,6 @@ public class User {
         return signatures;
     }
 
-    public void setSignatures(List<Signature> signatures) {
-        this.signatures = signatures;
-    }
 
     public String getPassword() {
         return password;
