@@ -30,20 +30,4 @@ public record SignatureDTO(Long id,
                 signature.getImageCode()
                 );
     }
-
-
-    public Signature toEntity() {
-        Signature signature = new Signature();
-        signature.setId(id);
-        signature.setName(name);
-        signature.setCategory(category);
-        signature.setPrice(price);
-        signature.setBillingDate(billingDate);
-
-        if (signatureImageCode != null) {
-            signature.setImageName(SignatureImage.valueOf(signatureImageCode));
-        }
-
-        return signature;
-    }
 }
