@@ -1,15 +1,15 @@
 package com.streamwise.domain.model;
 
 import jakarta.persistence.*;
-import org.springframework.security.core.userdetails.UserDetails;
+
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
+
+
 import java.util.List;
-import java.util.Set;
+
 
 @Entity(name = "tb_users")
-public class User implements UserDetails {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,13 +18,6 @@ public class User implements UserDetails {
     private String email;
     private String password;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "user_roles",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id")
-    )
-    private Set<Role> authorities = new HashSet<>();
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Signature> signatures = new ArrayList<>();
@@ -39,10 +32,6 @@ public class User implements UserDetails {
         this.signatures = signatures;
     }
 
-    @Override
-    public Collection<Role> getAuthorities() {
-        return authorities;
-    }
 
     public Long getId() {
         return id;
@@ -72,10 +61,6 @@ public class User implements UserDetails {
         this.password = password;
     }
 
-    public void setAuthorities(Set<Role> authorities) {
-        this.authorities = authorities;
-    }
-
     public List<Signature> getSignatures() {
         return signatures;
     }
@@ -84,33 +69,7 @@ public class User implements UserDetails {
         this.signatures = signatures;
     }
 
-    @Override
     public String getPassword() {
         return password;
-    }
-
-    @Override
-    public String getUsername() {
-        return email;
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true;
     }
 }
