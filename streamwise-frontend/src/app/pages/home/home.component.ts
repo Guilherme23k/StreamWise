@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { CardComponent } from "../../components/card/card.component";
 import { EstatisticasComponent } from "../estatisticas/estatisticas.component";
@@ -16,6 +16,12 @@ export class HomeComponent {
   constructor(private router: Router){}
 
   isMenuOpen = false;
+
+  @ViewChild('estatisticas') estatisticasComponent!: EstatisticasComponent;
+
+  atualizarEstatisticas() {
+    this.estatisticasComponent.calcularGastosMensais();
+  }
 
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;

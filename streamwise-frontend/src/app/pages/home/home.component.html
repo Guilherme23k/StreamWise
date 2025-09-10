@@ -20,6 +20,6 @@
 
 
 <section>
-    <app-card></app-card>
-    <app-estatisticas></app-estatisticas>
+    <app-card (signaturesUpdated)="atualizarEstatisticas()"></app-card>
+    <app-estatisticas #estatisticas></app-estatisticas>
 </section>

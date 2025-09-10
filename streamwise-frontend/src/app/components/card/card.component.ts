@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { DataCardService } from '../../services/data-card.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
@@ -35,6 +35,8 @@ export class CardComponent implements OnInit {
 
 
   signaturesList = STREAMINGS;
+
+  @Output() signaturesUpdated = new EventEmitter<void>();
 
 
   constructor(private dataCardService: DataCardService, private modalService: NgbModal) {}
@@ -101,6 +103,8 @@ getImageUrlFromCode(code: string) : string{
         this.resetselectedSignature();  
         this.modalService.dismissAll();
         this.loadSignatures();
+
+        this.signaturesUpdated.emit();
       },
       error: (err) => console.error('Erro ao adicionar assinatura', err)
     });
