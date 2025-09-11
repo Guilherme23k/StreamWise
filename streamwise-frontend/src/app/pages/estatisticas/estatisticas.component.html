@@ -12,14 +12,12 @@
         </div>
     </div>
 
-    <!-- <div class="timeline">
+    <div class="timeline">
+        <div class="timeline-line"></div>
         <div class="month" *ngFor="let gasto of gastosMensais; let i = index">
-            <span class="month-label">{{ i + 1 | date:'MMM' }}</span>
-            <div class="bar-container">
-                <div class="bar" [style.height.%]="(gasto / gastoMensal) * 100">
-                    <span class="bar-value">R$ {{ gasto | number:'1.2-2' }}</span>
-                </div>
-            </div>
+            <div class="dot"></div>
+            <span class="month-label">{{ i + 1 }}/12</span>
+            <span class="month-value">R$ {{ gastoMensal | number:'1.0-0' }}</span>
         </div>
-    </div> -->
+    </div>
 </div>
