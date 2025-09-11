@@ -20,7 +20,7 @@ export class HomeComponent {
   @ViewChild('estatisticas') estatisticasComponent!: EstatisticasComponent;
 
   atualizarEstatisticas() {
-    this.estatisticasComponent.calcularGastosMensais();
+    this.estatisticasComponent.calcularGastos();
   }
 
   toggleMenu(): void {

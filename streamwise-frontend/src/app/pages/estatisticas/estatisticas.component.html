@@ -1,13 +1,25 @@
 <div class="container">
-    <h2>Estatisticas</h2>
+    <h2 class="title">Estatísticas</h2>
+
     <div class="stats-cards">
         <div class="stat-card">
-            <h3>Total de gastos dos servicos</h3>
-            <p> {{gastosTotais}} </p>
+            <h3>Gasto anual</h3>
+            <p class="value">R$ {{ gastoAnual | number:'1.2-2' }}</p>
         </div>
         <div class="stat-card">
-            <h3>Total de gastos mensais dos servicos</h3>
-            <p> {{gastosMensais}} </p>
+            <h3>Gasto mensal</h3>
+            <p class="value">R$ {{ gastoMensal | number:'1.2-2' }}</p>
         </div>
     </div>
+
+    <!-- <div class="timeline">
+        <div class="month" *ngFor="let gasto of gastosMensais; let i = index">
+            <span class="month-label">{{ i + 1 | date:'MMM' }}</span>
+            <div class="bar-container">
+                <div class="bar" [style.height.%]="(gasto / gastoMensal) * 100">
+                    <span class="bar-value">R$ {{ gasto | number:'1.2-2' }}</span>
+                </div>
+            </div>
+        </div>
+    </div> -->
 </div>
