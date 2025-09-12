@@ -26,7 +26,6 @@ public class JwtUtil {
     private String secret;
 
     private Key getSigningKey(){
-        logger.info("JWT_SECRET: {}", secret);
         return Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
     }
 
