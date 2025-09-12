@@ -14,10 +14,12 @@
 
     <div class="timeline">
         <div class="timeline-line"></div>
-        <div class="month" *ngFor="let gasto of gastosMensais; let i = index">
+        <div class="month" *ngFor="let gasto of timeline; let i = index">
             <div class="dot"></div>
-            <span class="month-label">{{ i + 1 }}/12</span>
-            <span class="month-value">R$ {{ gastoMensal | number:'1.0-0' }}</span>
+            <span class="month-label">
+                {{ mesesLabels[i] }}
+            </span>
+            <span class="month-value">R$ {{ gasto | number:'1.0-0' }}</span>
         </div>
     </div>
 </div>
