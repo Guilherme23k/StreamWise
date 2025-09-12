@@ -17,7 +17,7 @@ public class Signature {
     private boolean active;
     private String category;
     private BigDecimal price;
-    private int billingDate;
+    private LocalDate billingDate;
 
     private int monthDuration;
 
@@ -52,7 +52,7 @@ public class Signature {
         return imageName != null ? imageName.name() : null;
     }
 
-    public Signature(Long id, String name, String category, BigDecimal price, int billingDate, User user, SignatureImage imageName, int monthDuration) {
+    public Signature(Long id, String name, String category, BigDecimal price, LocalDate billingDate, User user, SignatureImage imageName, int monthDuration) {
         this.id = id;
         this.name = name;
         this.category = category;
@@ -98,11 +98,11 @@ public class Signature {
         this.price = price;
     }
 
-    public int getBillingDate() {
+    public LocalDate getBillingDate() {
         return billingDate;
     }
 
-    public void setBillingDate(int billingDate) {
+    public void setBillingDate(LocalDate billingDate) {
         this.billingDate = billingDate;
     }
 
