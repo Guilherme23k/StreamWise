@@ -12,7 +12,7 @@ public record SignatureDTO(Long id,
                            Boolean active,
                            String category,
                            BigDecimal price,
-                           int billingDate,
+                           LocalDate billingDate,
 
                            int monthDuration,
                            String signatureImageCode) {
