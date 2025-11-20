@@ -60,6 +60,5 @@ Acesse no navegador: `http://localhost:4200`
 
 ## 🎡 Entre no controle das suas assinaturas agora!
 
-🔧 [Repositório no GitHub](https://github.com/Guilherme23k/StreamWise)  
 👀 Acompanhe a evolução do projeto e fique por dentro das novidades!
 
