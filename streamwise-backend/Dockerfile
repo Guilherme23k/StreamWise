@@ -1,5 +1,5 @@
 # Usando uma imagem base com JDK 17 para a construção
-FROM openjdk:17-jdk-slim AS build
+FROM eclipse-temurin:17-jdk-alpine AS build
 
 # Definindo o diretório de trabalho
 WORKDIR /app
