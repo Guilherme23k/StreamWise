@@ -6,6 +6,8 @@ build/
 !**/src/test/**/build/
 .env
 .env.local
+.env.*
+!.env.example
 
 ### STS ###
 .apt_generated
