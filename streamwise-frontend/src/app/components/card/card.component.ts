@@ -163,9 +163,10 @@ getImageUrlFromCode(code: string) : string{
   }
 
   
-  getBillingDay(billingDate: number): number {
-    return billingDate;  
-  }
+  getBillingDay(billingDate: string): string {
+  if (!billingDate) return '—';
+  return String(parseInt(billingDate.split('-')[2]));
+}
 
   
   getGridClass(): string {
