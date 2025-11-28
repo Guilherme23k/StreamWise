@@ -53,7 +53,8 @@ getImageUrlFromCode(code: string) : string{
 
   const name = codeToName[code];
   const streaming = STREAMINGS.find(s => s.name === name);
-  return streaming ? streaming.image : 'assets/default.png';
+  return streaming?.image ?? 'assets/default.png';
+
 
 }
 
@@ -92,20 +93,31 @@ getImageUrlFromCode(code: string) : string{
 
   addSignature(): void {
 
-  // 1. Ajusta name e imagem
-  this.selectedSignature.name = this.buttonSignatureNameSelected;
-  this.selectedSignature.signatureImageCode = this.buttonSignatureNameSelected;
+  // 1. Pega o item selecionado da lista de streaming
+  const streaming = this.signaturesList.find(s => s.name === this.buttonSignatureNameSelected);
 
-  // 2. Converte dia para data completa YYYY-MM-DD
+  if (!streaming) return;
+
+  // 2. Cria o objeto completo pra enviar pro backend
   const today = new Date();
   const year = today.getFullYear();
   const month = String(today.getMonth() + 1).padStart(2, '0');
   const day = String(this.selectedSignature.billingDate).padStart(2, '0');
 
-  this.selectedSignature.billingDate = `${year}-${month}-${day}`;
+  const newSignature = {
+    id: 0,
+    name: streaming.name,
+    active: true,
+    category: 'STREAMING',
+    price: this.selectedSignature.price,
+    billingDate: `${year}-${month}-${day}`,
+    monthDuration: this.selectedSignature.monthDuration,
+    signatureImageCode: streaming.name,
+    image: streaming.image
+  };
 
   // 3. Envia pro backend
-  this.dataCardService.addSignature(this.selectedSignature).subscribe({
+  this.dataCardService.addSignature(newSignature).subscribe({
     next: (response) => {
       console.log('Resposta do Backend:', response);  
       this.signatures.push(response); 
@@ -117,7 +129,6 @@ getImageUrlFromCode(code: string) : string{
     error: (err) => console.error('Erro ao adicionar assinatura', err)
   });
 
-  console.log(this.selectedSignature)
 }
 
   editSignature(): void{

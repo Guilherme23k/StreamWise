@@ -1,4 +1,11 @@
 export interface Streaming {
-    name: string;
-    image: string;
+  id: number;
+  name: string;
+  active: boolean;
+  category: string;
+  price: number;
+  billingDate: string;
+  monthDuration: number;
+  signatureImageCode: string;
+  image?: string; 
 }
