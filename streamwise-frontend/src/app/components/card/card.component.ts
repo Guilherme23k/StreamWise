@@ -3,8 +3,9 @@ import { DataCardService } from '../../services/data-card.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { STREAMINGS, codeToName } from '../../types/streamingList';
+import { STREAMINGS_SELECT , codeToName, StreamingSelect } from '../../types/streamingList';
 import { Streaming } from '../../interface/Streaming';
+
 
 @Component({
   selector: 'app-card',
@@ -34,7 +35,7 @@ export class CardComponent implements OnInit {
   buttonSignatureImageSelected : String = '';
 
 
-  signaturesList = STREAMINGS;
+  signaturesList: StreamingSelect[] = STREAMINGS_SELECT;
 
   @Output() signaturesUpdated = new EventEmitter<void>();
 
@@ -49,13 +50,9 @@ export class CardComponent implements OnInit {
   monthsOfYear: number[] = Array.from({ length: 12 }, (_, i) => i + 1);
 
 
-getImageUrlFromCode(code: string) : string{
-
-  const name = codeToName[code];
-  const streaming = STREAMINGS.find(s => s.name === name);
+getImageUrlFromCode(code: string): string {
+  const streaming = STREAMINGS_SELECT.find(s => s.name === codeToName[code]);
   return streaming?.image ?? 'assets/default.png';
-
-
 }
 
   
@@ -91,20 +88,16 @@ getImageUrlFromCode(code: string) : string{
     this.modalService.open(content);
   }
 
-  addSignature(): void {
-
-  // 1. Pega o item selecionado da lista de streaming
+addSignature(): void {
   const streaming = this.signaturesList.find(s => s.name === this.buttonSignatureNameSelected);
-
   if (!streaming) return;
 
-  // 2. Cria o objeto completo pra enviar pro backend
   const today = new Date();
   const year = today.getFullYear();
   const month = String(today.getMonth() + 1).padStart(2, '0');
   const day = String(this.selectedSignature.billingDate).padStart(2, '0');
 
-  const newSignature = {
+  const newSignature: Streaming = {
     id: 0,
     name: streaming.name,
     active: true,
@@ -116,19 +109,16 @@ getImageUrlFromCode(code: string) : string{
     image: streaming.image
   };
 
-  // 3. Envia pro backend
   this.dataCardService.addSignature(newSignature).subscribe({
     next: (response) => {
-      console.log('Resposta do Backend:', response);  
-      this.signatures.push(response); 
-      this.resetselectedSignature();  
+      this.signatures.push(response);
+      this.resetselectedSignature();
       this.modalService.dismissAll();
       this.loadSignatures();
       this.signaturesUpdated.emit();
     },
     error: (err) => console.error('Erro ao adicionar assinatura', err)
   });
-
 }
 
   editSignature(): void{
@@ -203,16 +193,23 @@ getImageUrlFromCode(code: string) : string{
     return this.signatures.length > 2;
   }
 
-  showSignatureForms(signature: Streaming): void {
+  showSignatureForms(signature: StreamingSelect): void {
+  this.selectedSignature = {
+    id: 0,
+    name: signature.name,
+    active: true,
+    category: 'STREAMING',
+    price: 0,
+    billingDate: '2025-01-01', // valor padrão
+    monthDuration: 1,
+    signatureImageCode: signature.name,
+    image: signature.image
+  };
 
-    this.selectedSignature = signature;
+  this.buttonSignatureNameSelected = signature.name;
+  this.buttonSignatureImageSelected = signature.image;
 
-    document.querySelector('.modal-forms')!.setAttribute('style', 'display: block;');
-
-    this.buttonSignatureNameSelected = this.selectedSignature.name;
-    this.buttonSignatureImageSelected = this.selectedSignature.image;
-
-    this.selectedSignature.category = 'STREAMING'
-  }
+  document.querySelector('.modal-forms')!.setAttribute('style', 'display: block;');
+}
 
 }
