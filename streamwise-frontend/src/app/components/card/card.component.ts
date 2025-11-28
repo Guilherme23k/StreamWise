@@ -97,6 +97,9 @@ addSignature(): void {
   const month = String(today.getMonth() + 1).padStart(2, '0');
   const day = String(this.selectedSignature.billingDate).padStart(2, '0');
 
+
+  const code = Object.keys(codeToName).find(key => codeToName[key] === streaming.name) ?? streaming.name.toUpperCase();
+
   const newSignature: Streaming = {
     id: 0,
     name: streaming.name,
@@ -105,7 +108,7 @@ addSignature(): void {
     price: this.selectedSignature.price,
     billingDate: `${year}-${month}-${day}`,
     monthDuration: this.selectedSignature.monthDuration,
-    signatureImageCode: streaming.name,
+    signatureImageCode: code, 
     image: streaming.image
   };
 
@@ -194,6 +197,8 @@ addSignature(): void {
   }
 
   showSignatureForms(signature: StreamingSelect): void {
+  const code = Object.keys(codeToName).find(key => codeToName[key] === signature.name) ?? signature.name.toUpperCase();
+
   this.selectedSignature = {
     id: 0,
     name: signature.name,
@@ -202,7 +207,7 @@ addSignature(): void {
     price: 0,
     billingDate: '2025-01-01', // valor padrão
     monthDuration: 1,
-    signatureImageCode: signature.name,
+    signatureImageCode: code, // <--- código aqui
     image: signature.image
   };
 
