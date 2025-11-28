@@ -8,7 +8,7 @@ import { tap } from 'rxjs';
 })
 export class UserResponseService {
 
-  private apiUrl = 'http://localhost:8080/auth';
+  private apiUrl = 'https://streamwise-production.up.railway.app/auth';
 
   constructor(private http: HttpClient) { }
 
