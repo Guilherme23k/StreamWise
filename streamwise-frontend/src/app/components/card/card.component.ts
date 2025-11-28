@@ -91,26 +91,34 @@ getImageUrlFromCode(code: string) : string{
   }
 
   addSignature(): void {
- 
 
-    this.selectedSignature.name = this.buttonSignatureNameSelected;
-    this.selectedSignature.signatureImageCode = this.buttonSignatureNameSelected;
+  // 1. Ajusta name e imagem
+  this.selectedSignature.name = this.buttonSignatureNameSelected;
+  this.selectedSignature.signatureImageCode = this.buttonSignatureNameSelected;
 
-    this.dataCardService.addSignature(this.selectedSignature).subscribe({
-      next: (response) => {
-        console.log('Resposta do Backend:', response);  
-        this.signatures.push(response); 
-        this.resetselectedSignature();  
-        this.modalService.dismissAll();
-        this.loadSignatures();
+  // 2. Converte dia para data completa YYYY-MM-DD
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, '0');
+  const day = String(this.selectedSignature.billingDate).padStart(2, '0');
 
-        this.signaturesUpdated.emit();
-      },
-      error: (err) => console.error('Erro ao adicionar assinatura', err)
-    });
+  this.selectedSignature.billingDate = `${year}-${month}-${day}`;
 
-    console.log(this.selectedSignature)
-  }
+  // 3. Envia pro backend
+  this.dataCardService.addSignature(this.selectedSignature).subscribe({
+    next: (response) => {
+      console.log('Resposta do Backend:', response);  
+      this.signatures.push(response); 
+      this.resetselectedSignature();  
+      this.modalService.dismissAll();
+      this.loadSignatures();
+      this.signaturesUpdated.emit();
+    },
+    error: (err) => console.error('Erro ao adicionar assinatura', err)
+  });
+
+  console.log(this.selectedSignature)
+}
 
   editSignature(): void{
     const id = this.selectedSignature.id; 
