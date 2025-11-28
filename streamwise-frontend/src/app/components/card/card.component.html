@@ -146,30 +146,18 @@
             </div>
             <div class="mb-3">
                 <label for="billingDate" class="form-label">Dia de Cobrança</label>
-                <select id="billingDate" class="form-control" [(ngModel)]="selectedSignature.billingDate" name="billingDate" required>
+                <select id="billingDate" class="form-control" [(ngModel)]="selectedSignature.billingDate" name="billingDate"
+                    required>
                     <option *ngFor="let day of daysOfMonth" [value]="day">{{ day }}</option>
                 </select>
             </div>
             <div class="mb-3">
-                <label for="billingMonth" class="form-label">Duração da cobrança</label>
-                <select id="billingMonth" class="form-control" [(ngModel)]="selectedSignature.billingMonth" name="billingMonth" required>
+                <label for="monthDuration" class="form-label">Duração da cobrança (em meses)</label>
+                <select id="monthDuration" class="form-control" [(ngModel)]="selectedSignature.monthDuration" name="monthDuration"
+                    required>
                     <option *ngFor="let month of monthsOfYear" [value]="month">{{ month }}</option>
                 </select>
             </div>
-
-            <!-- <div class="mb-3">
-                <label for="signatureImageCode" class="form-label">Escolha uma Imagem</label>
-                <select id="signatureImageCode" class="form-control" [(ngModel)]="selectedSignature.signatureImageCode"
-                    name="signatureImageCode" required>
-                    <option *ngFor="let signature of availableSignatures" [value]="signature.name">
-                        {{ signature.name }}
-                    </option>
-                </select>
-            </div>
-
-            <div *ngIf="selectedSignature.signatureImageCode">
-                <img [src]="getImageUrl(selectedSignature.signatureImageCode)" alt="Prévia da Imagem" width="100">
-            </div> -->
         </form>
     </div>
     <div class="modal-footer">
