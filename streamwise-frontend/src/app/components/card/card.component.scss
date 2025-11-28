@@ -137,6 +137,12 @@ li {
     }
 }
 
+.disabled-button {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
 .add-card {
     display: flex;
     align-items: center;

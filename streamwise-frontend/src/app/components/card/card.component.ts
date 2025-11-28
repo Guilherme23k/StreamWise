@@ -217,4 +217,12 @@ addSignature(): void {
   document.querySelector('.modal-forms')!.setAttribute('style', 'display: block;');
 }
 
+servicesDisabled = true;
+
+openChoiceModalDisabled(): void{
+  if (this.servicesDisabled) {
+    alert('A aba de adicionar serviços está temporariamente desativada');
+  }
+}
+
 }
