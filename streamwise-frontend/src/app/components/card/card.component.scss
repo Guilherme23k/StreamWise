@@ -138,9 +138,16 @@ li {
 }
 
 .disabled-button {
-    background-color: #ccc;
-    color: #666;
-    cursor: not-allowed;
+    background-color: #ccc !important;
+    color: #666 !important;
+    cursor: not-allowed !important;
+    pointer-events: none;
+    border: 1px solid #999 !important;
+
+    &:hover {
+        background-color: #ccc !important; // evita efeito hover
+        color: #666 !important;
+    }
 }
 
 .add-card {
