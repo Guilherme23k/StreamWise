@@ -100,6 +100,7 @@ addSignature(): void {
 
   const code = Object.keys(codeToName).find(key => codeToName[key] === streaming.name) ?? streaming.name.toUpperCase();
 
+  
   const newSignature: Streaming = {
     id: 0,
     name: streaming.name,
@@ -111,6 +112,10 @@ addSignature(): void {
     signatureImageCode: code, 
     image: streaming.image
   };
+
+   if (newSignature.image == null) {
+      newSignature.signatureImageCode
+   }
 
   this.dataCardService.addSignature(newSignature).subscribe({
     next: (response) => {
