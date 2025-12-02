@@ -10,7 +10,8 @@ export const STREAMINGS_SELECT: StreamingSelect[] = [
     { name: 'Disney Plus', image: 'https://img.icons8.com/?size=100&id=PIBuqGDN2nPm&format=png&color=000000' },
     { name: 'HBO Max', image: 'https://img.icons8.com/?size=100&id=9tVdlpWe1F9k&format=png&color=000000' },
     { name: 'Paramont', image: 'https://img.icons8.com/?size=100&id=Ggt3oh6aoRWh&format=png&color=000000' },
-    { name: 'Globoplay', image: 'https://img.icons8.com/?size=100&id=cdS20W1QGgDD&format=png&color=000000' }
+    { name: 'Globoplay', image: 'https://img.icons8.com/?size=100&id=cdS20W1QGgDD&format=png&color=000000' },
+    { name: 'servico', image: 'https://img.icons8.com/?size=100&id=30379&format=png&color=000000'}
 ];
 
 export const codeToName: Record<string, string> = {
