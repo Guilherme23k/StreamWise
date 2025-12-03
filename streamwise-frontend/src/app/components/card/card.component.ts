@@ -113,9 +113,8 @@ addSignature(): void {
     image: streaming.image
   };
 
-   if (newSignature.image == null) {
-      newSignature.signatureImageCode
-   }
+
+      newSignature.image ||= STREAMINGS_SELECT.find(s => s.name === 'servico')?.image ?? 'assets/default.png';
 
   this.dataCardService.addSignature(newSignature).subscribe({
     next: (response) => {
