@@ -23,7 +23,7 @@ WORKDIR /app
 
 COPY --from=build /app/build/libs/*.jar app.jar
 
-ENV SPRING_PROFILES_ACTIVE=dev
+ENV SPRING_PROFILES_ACTIVE=prod
 
 EXPOSE 8080
 
